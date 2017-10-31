@@ -1,11 +1,5 @@
 <?php
 
-// if(!isset($_SESSION)) 
-// { 
-//     session_start(); 
-// } 
-//session_start(); //we need to start session in order to access it through CI
-
 class User_Authentication extends CI_Controller
 {
 
@@ -100,7 +94,7 @@ class User_Authentication extends CI_Controller
                     print_r($this->session->userdata['logged_in']['level']);
                     if ($this->session->userdata['logged_in']['level'] == 0) {
                         print_r("ini admin");
-                        redirect('event_user/');
+                        redirect('dashboard/');
                     } else {
                         print_r("silahkan buat halaman user");
                     }

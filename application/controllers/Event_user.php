@@ -21,7 +21,6 @@ class Event_user extends CI_Controller{
         $data['event_users'] = $this->Event_user_model->get_all_event_users();
         
         $data['_view'] = 'event_user/index';
-        //print_r($this->session->userdata['logged_in']);
         $this->load->view('layouts/main',$data);
     }
 

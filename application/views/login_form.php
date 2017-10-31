@@ -1,11 +1,24 @@
 <html>
 <?php
 if (isset($this->session->userdata['logged_in'])) {
-    header("location: http://localhost/web/code_igniter/eventakakom/");
+    header("location: http://localhost/web/code_igniter/eventakakom/dashboard");
 }
 ?>
 <head>
 <title>Login Form</title>
+        <!-- Bootstrap 3.3.6 -->
+        <link rel="stylesheet" href="<?php echo site_url('resources/css/bootstrap.min.css');?>">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="<?php echo site_url('resources/css/font-awesome.min.css');?>">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- Datetimepicker -->
+        <link rel="stylesheet" href="<?php echo site_url('resources/css/bootstrap-datetimepicker.min.css');?>">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="<?php echo site_url('resources/css/AdminLTE.min.css');?>">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+             folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="<?php echo site_url('resources/css/_all-skins.min.css');?>">
 </head>
 <body>
 <?php
@@ -25,7 +38,6 @@ if (isset($message_display)) {
 <div id="main">
 <div id="login">
 <h2>Login Form</h2>
-<hr/>
 <?php echo form_open('user_authentication/user_login_process'); ?>
 <?php
 echo "<div class='error_msg'>";

@@ -6,9 +6,19 @@ if (isset($this->session->userdata['logged_in'])) {
 ?>
 <head>
 <title>Registration Form</title>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>
-</head>
+        <!-- Bootstrap 3.3.6 -->
+        <link rel="stylesheet" href="<?php echo site_url('resources/css/bootstrap.min.css');?>">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="<?php echo site_url('resources/css/font-awesome.min.css');?>">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- Datetimepicker -->
+        <link rel="stylesheet" href="<?php echo site_url('resources/css/bootstrap-datetimepicker.min.css');?>">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="<?php echo site_url('resources/css/AdminLTE.min.css');?>">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+             folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="<?php echo site_url('resources/css/_all-skins.min.css');?>"></head>
 <body>
 <div id="main">
 <div id="login">

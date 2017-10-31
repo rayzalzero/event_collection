@@ -9,6 +9,7 @@ class Event_event extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('Event_event_model');
+        $this->load->library('session');
     } 
 
     /*
