@@ -18,6 +18,8 @@ class User_Authentication extends CI_Controller
 
         // Load database
         $this->load->model('login_database');
+
+        $this->load->library('encryption');
     }
 
 // Show login page
@@ -77,11 +79,13 @@ class User_Authentication extends CI_Controller
             $data = array(
             'username' => $this->input->post('username'),
             'password' => $this->input->post('password')
+            //'password' => $this->encryption->encrypt($this->input->post('password'))
             );
             $result = $this->login_database->login($data);
             if ($result == true) {
                 $username = $this->input->post('username');
                 $result = $this->login_database->read_user_information($username);
+                //vsprintf($this->login_database->read_user_information($username));
                 if ($result != false) {
                     $session_data = array(
                     'username' => $result[0]->username,
@@ -91,11 +95,14 @@ class User_Authentication extends CI_Controller
                     );
                     // Add user data in session
                     $this->session->set_userdata('logged_in', $session_data);
-                    print_r($this->session->userdata['logged_in']['level']);
+                    //print_r($this->session->userdata['logged_in']['level']);
                     if ($this->session->userdata['logged_in']['level'] == 0) {
                         print_r("ini admin");
                         redirect('dashboard/');
-                    } else {
+                    }if ($this->session->userdata['logged_in']['level'] == 1) {
+                        print_r("Creator");
+                    }
+                    else {
                         print_r("silahkan buat halaman user");
                     }
                     

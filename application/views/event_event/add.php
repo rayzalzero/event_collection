@@ -10,7 +10,7 @@
 					<div class="col-md-6">
 						<label for="id_user" class="control-label">Id User</label>
 						<div class="form-group">
-							<input type="text" name="id_user" value="<?php echo $this->input->post('id_user'); ?>" class="form-control" id="id_user" />
+							<input type="hidden" name="id_user" value="<?php echo $this->session->userdata['logged_in']['id_user'];?>" class="form-control" id="id_user" />
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -73,18 +73,6 @@
 						<label for="poster" class="control-label">Poster</label>
 						<div class="form-group">
 							<input type="text" name="poster" value="<?php echo $this->input->post('poster'); ?>" class="form-control" id="poster" />
-						</div>
-					</div>
-					<div class="col-md-6">
-						<label for="create_at" class="control-label">Create At</label>
-						<div class="form-group">
-							<input type="text" name="create_at" value="<?php echo $this->input->post('create_at'); ?>" class="has-datetimepicker form-control" id="create_at" />
-						</div>
-					</div>
-					<div class="col-md-6">
-						<label for="update_at" class="control-label">Update At</label>
-						<div class="form-group">
-							<input type="text" name="update_at" value="<?php echo $this->input->post('update_at'); ?>" class="has-datetimepicker form-control" id="update_at" />
 						</div>
 					</div>
 					<div class="col-md-6">

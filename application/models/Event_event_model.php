@@ -24,7 +24,7 @@ class Event_event_model extends CI_Model
      */
     function get_all_event_event()
     {
-        $this->db->select('nama_event, lokasi, pembicara, tanggal_mulai');
+        $this->db->select('id_event, name_event, lokasi, pembicara, tanggal_mulai, jumlah_tiket, deskripsi_acara');
         $this->db->order_by('id_event', 'desc');
         return $this->db->get('event_event')->result_array();
     }

@@ -65,7 +65,7 @@
                                             <a href="#" class="btn btn-default btn-flat">Profile</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="http://localhost/web/code_igniter/eventakakom/user_authentication/logout" class="btn btn-default btn-flat">Sign out</a>
+                                            <a href="<?php echo site_url();?>user_authentication/logout" class="btn btn-default btn-flat">Sign out</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -82,7 +82,7 @@
                     <ul class="sidebar-menu">
                         <li class="header">MAIN NAVIGATION</li>
                         <li>
-                            <a href="<?php echo site_url();?>">
+                            <a href="<?php echo site_url();?>/">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>

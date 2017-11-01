@@ -28,15 +28,13 @@ class Login_Database extends CI_Model
 // Read data using username and password
     public function login($data)
     {
-
-        $condition = "username =" . "'" . $data['username'] . "' AND " . "password =" . "'" . $data['password'] . "'";
+        $condition = "username =" . "'" . $data['username'] . "' AND " . "password =" . "'" . md5($data['password']) . "'";
         $this->db->select('*');
         $this->db->from('event_users');
         $this->db->where($condition);
         $this->db->limit(1);
         $query = $this->db->get();
         
-
         if ($query->num_rows() == 1) {
             return true;
         } else {

@@ -21,6 +21,7 @@ class Event_event extends CI_Controller{
         
         $data['_view'] = 'event_event/index';
         $this->load->view('layouts/main',$data);
+        //$this->load->view('auth.php');
     }
 
     /*
@@ -42,19 +43,19 @@ class Event_event extends CI_Controller{
 		
 		if($this->form_validation->run())     
         {   
+            $waktusekarang = date("Y-m-d H:i:s");
             $params = array(
 				'id_user' => $this->input->post('id_user'),
 				'name_event' => $this->input->post('name_event'),
 				'lokasi' => $this->input->post('lokasi'),
 				'pembicara' => $this->input->post('pembicara'),
-				'tanggal_mulai' => $this->input->post('tanggal_mulai'),
+				'tanggal_mulai' => date( "Y-m-d", strtotime($this->input->post('tanggal_mulai'))),
 				'durasi_hari' => $this->input->post('durasi_hari'),
 				'jam_mulai' => $this->input->post('jam_mulai'),
 				'jam_selesai' => $this->input->post('jam_selesai'),
 				'jumlah_tiket' => $this->input->post('jumlah_tiket'),
 				'poster' => $this->input->post('poster'),
-				'create_at' => $this->input->post('create_at'),
-				'update_at' => $this->input->post('update_at'),
+				'create_at' => $waktusekarang,
 				'deskripsi_acara' => $this->input->post('deskripsi_acara'),
             );
             
@@ -89,22 +90,23 @@ class Event_event extends CI_Controller{
 			$this->form_validation->set_rules('jam_selesai','Jam Selesai','required');
 			$this->form_validation->set_rules('jumlah_tiket','Jumlah Tiket','required');
 			$this->form_validation->set_rules('deskripsi_acara','Deskripsi Acara','required');
-		
+            
 			if($this->form_validation->run())     
             {   
+                $waktusekarang = date("Y-m-d H:i:s");
                 $params = array(
 					'id_user' => $this->input->post('id_user'),
 					'name_event' => $this->input->post('name_event'),
 					'lokasi' => $this->input->post('lokasi'),
 					'pembicara' => $this->input->post('pembicara'),
-					'tanggal_mulai' => $this->input->post('tanggal_mulai'),
+                    //'tanggal_mulai' => $this->input->post('tanggal_mulai'),
+                    'tanggal_mulai' => date( "Y-m-d", strtotime($this->input->post('tanggal_mulai'))),
 					'durasi_hari' => $this->input->post('durasi_hari'),
 					'jam_mulai' => $this->input->post('jam_mulai'),
 					'jam_selesai' => $this->input->post('jam_selesai'),
 					'jumlah_tiket' => $this->input->post('jumlah_tiket'),
 					'poster' => $this->input->post('poster'),
-					'create_at' => $this->input->post('create_at'),
-					'update_at' => $this->input->post('update_at'),
+					'update_at' => $waktusekarang,
 					'deskripsi_acara' => $this->input->post('deskripsi_acara'),
                 );
 

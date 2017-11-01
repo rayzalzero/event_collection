@@ -43,9 +43,9 @@ class Event_user extends CI_Controller{
             $waktusekarang = date("Y-m-d H:i:s");
             $params = array(
                 'level' => $this->input->post('level'),
-                //'password'  => md5($this->input->post('password')),
+                'password'  => md5($this->input->post('password')),
 				//'password' => $this->input->post('password'),
-                'password' => $this->encryption->encrypt($this->input->post('password')),
+                //'password' => $this->encryption->encrypt($this->input->post('password')),
                 'username' => $this->input->post('username'),
 				'name' => $this->input->post('name'),
 				'instansi' => $this->input->post('instansi'),
@@ -77,7 +77,8 @@ class Event_user extends CI_Controller{
         // check if the event_user exists before trying to edit it
         $data['event_user'] = $this->Event_user_model->get_event_user($id_user);
         $data['event_user']['password'] = $this->encryption->decrypt($data['event_user']['password']);
-        print_r($data['event_user']['password']);
+        //$data['event_user']['password'] = md5($data['event_user']['password']);
+        //print_r($data['event_user']['password']);
         if(isset($data['event_user']['id_user']))
         {
             $this->load->library('form_validation');

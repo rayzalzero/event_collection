@@ -1,8 +1,6 @@
 <html>
 <?php
-if (isset($this->session->userdata['logged_in'])) {
-    header("location: http://localhost/web/code_igniter/eventakakom/dashboard");
-}
+require_once('auth.php');
 ?>
 <head>
 <title>Login Form</title>

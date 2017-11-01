@@ -44,7 +44,7 @@
 					<div class="col-md-6">
 						<label for="durasi_hari" class="control-label"><span class="text-danger">*</span>Durasi Hari</label>
 						<div class="form-group">
-							<input type="text" name="durasi_hari" value="<?php echo ($this->input->post('durasi_hari') ? $this->input->post('durasi_hari') : $event_event['durasi_hari']); ?>" class="form-control" id="durasi_hari" />
+							<input type="number" name="durasi_hari" value="<?php echo ($this->input->post('durasi_hari') ? $this->input->post('durasi_hari') : $event_event['durasi_hari']); ?>" class="form-control" id="durasi_hari" />
 							<span class="text-danger"><?php echo form_error('durasi_hari');?></span>
 						</div>
 					</div>
@@ -73,18 +73,6 @@
 						<label for="poster" class="control-label">Poster</label>
 						<div class="form-group">
 							<input type="text" name="poster" value="<?php echo ($this->input->post('poster') ? $this->input->post('poster') : $event_event['poster']); ?>" class="form-control" id="poster" />
-						</div>
-					</div>
-					<div class="col-md-6">
-						<label for="create_at" class="control-label">Create At</label>
-						<div class="form-group">
-							<input type="text" name="create_at" value="<?php echo ($this->input->post('create_at') ? $this->input->post('create_at') : $event_event['create_at']); ?>" class="has-datetimepicker form-control" id="create_at" />
-						</div>
-					</div>
-					<div class="col-md-6">
-						<label for="update_at" class="control-label">Update At</label>
-						<div class="form-group">
-							<input type="text" name="update_at" value="<?php echo ($this->input->post('update_at') ? $this->input->post('update_at') : $event_event['update_at']); ?>" class="has-datetimepicker form-control" id="update_at" />
 						</div>
 					</div>
 					<div class="col-md-6">
