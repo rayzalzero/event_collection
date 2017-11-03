@@ -11,6 +11,9 @@ class Event_user extends CI_Controller{
         $this->load->model('Event_user_model');
         $this->load->library('encryption');
         $this->load->library('session');
+        if (!$this->session->userdata['logged_in']) {
+            redirect('/');
+        }
     } 
 
     /*

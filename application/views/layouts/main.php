@@ -88,40 +88,40 @@
                         </li>
 						<li>
                             <a href="#">
-                                <i class="fa fa-adn"></i> <span>Event Event</span>
+                                <i class="fa fa-handshake-o"></i> <span> Acara</span>
                             </a>
                             <ul class="treeview-menu">
 								<li class="active">
-                                    <a href="<?php echo site_url('event_event/add');?>"><i class="fa fa-plus"></i> Add</a>
+                                    <a href="<?php echo site_url('event_event/add');?>"><i class="fa fa-plus"></i> Tambah Acara</a>
                                 </li>
 								<li>
-                                    <a href="<?php echo site_url('event_event/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php echo site_url('event_event/index');?>"><i class="fa fa-list-ul"></i> Daftar Acara</a>
                                 </li>
 							</ul>
                         </li>
 						<li>
                             <a href="#">
-                                <i class="fa fa-desktop"></i> <span>Event Participant</span>
+                                <i class="fa fa-address-book"></i> <span> Peserta Acara</span>
                             </a>
                             <ul class="treeview-menu">
 								<li class="active">
                                     <a href="<?php //echo site_url('event_participant/add');?>"><i class="fa fa-plus"></i> Add</a>
                                 </li>
 								<li>
-                                    <a href="<?php //echo site_url('event_participant/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php //echo site_url('event_participant/index');?>"><i class="fa fa-list-ul"></i> Daftar Acara</a>
                                 </li>
 							</ul>
                         </li>
 						<li>
                             <a href="#">
-                                <i class="fa fa-desktop"></i> <span>Event User</span>
+                                <i class="fa fa-user-circle"></i> <span> Pengguna</span>
                             </a>
                             <ul class="treeview-menu">
 								<li class="active">
-                                    <a href="<?php echo site_url('event_user/add');?>"><i class="fa fa-plus"></i> Add</a>
+                                    <a href="<?php echo site_url('event_user/add');?>"><i class="fa fa-plus"></i> Tambah Pengguna</a>
                                 </li>
 								<li>
-                                    <a href="<?php echo site_url('event_user/index');?>"><i class="fa fa-list-ul"></i> Listing</a>
+                                    <a href="<?php echo site_url('event_user/index');?>"><i class="fa fa-list-ul"></i> Daftar Pengguna</a>
                                 </li>
 							</ul>
                         </li>

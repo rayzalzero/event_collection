@@ -1,7 +1,4 @@
 <html>
-<?php
-require_once('auth.php');
-?>
 <head>
 <title>Login Form</title>
         <!-- Bootstrap 3.3.6 -->
