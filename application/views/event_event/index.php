@@ -29,6 +29,7 @@
 						<td>
                             <a href="<?php echo site_url('event_event/edit/'.$e['id_event']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
                             <a href="<?php echo site_url('event_event/remove/'.$e['id_event']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
+                            <a href="#" class="btn btn-info btn-xs"><span class="fa fa-eye"></span> Preview</a>
                         </td>
                     </tr>
                     <?php } ?>

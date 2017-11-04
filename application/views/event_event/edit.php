@@ -4,15 +4,10 @@
             <div class="box-header with-border">
               	<h3 class="box-title">Event Event Edit</h3>
             </div>
-			<?php echo form_open('event_event/edit/'.$event_event['id_event']); ?>
+			<?php echo form_open_multipart('event_event/edit/'.$event_event['id_event']); ?>
 			<div class="box-body">
 				<div class="row clearfix">
-					<div class="col-md-6">
-						<label for="id_user" class="control-label">Id User</label>
-						<div class="form-group">
-							<input type="text" name="id_user" value="<?php echo ($this->input->post('id_user') ? $this->input->post('id_user') : $event_event['id_user']); ?>" class="form-control" id="id_user" />
-						</div>
-					</div>
+							<input type="hidden" name="id_user" value="<?php echo ($this->input->post('id_user') ? $this->input->post('id_user') : $event_event['id_user']); ?>" class="form-control" id="id_user" />
 					<div class="col-md-6">
 						<label for="name_event" class="control-label"><span class="text-danger">*</span>Name Event</label>
 						<div class="form-group">
@@ -72,7 +67,8 @@
 					<div class="col-md-6">
 						<label for="poster" class="control-label">Poster</label>
 						<div class="form-group">
-							<input type="text" name="poster" value="<?php echo ($this->input->post('poster') ? $this->input->post('poster') : $event_event['poster']); ?>" class="form-control" id="poster" />
+							<img src="<?php echo site_url('/poster/'.$event_event['poster'].'');?>" alt="Poster" height="100" width="100">
+							<input type='file'  class="btn btn-primary btn-file" name='poster' size='20' value="<?php echo $this->input->post('poster'); ?>" id="poster"/>
 						</div>
 					</div>
 					<div class="col-md-6">

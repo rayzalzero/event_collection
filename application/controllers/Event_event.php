@@ -10,6 +10,9 @@ class Event_event extends CI_Controller{
         parent::__construct();
         $this->load->model('Event_event_model');
         $this->load->library('session');
+        $this->load->library('upload');
+        $this->load->helper(array('form', 'url'));
+        $this->load->helper('file');
         if (!$this->session->userdata['logged_in']) {
             redirect('/');
         }
@@ -44,8 +47,19 @@ class Event_event extends CI_Controller{
 		$this->form_validation->set_rules('jumlah_tiket','Jumlah Tiket','required');
 		$this->form_validation->set_rules('deskripsi_acara','Deskripsi Acara','required');
 		
-		if($this->form_validation->run())     
+        $config['upload_path']          = './poster/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['max_size']             = 0;
+        $config['max_width']            = 0;
+        $config['max_height']           = 0;
+        
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+        
+        if($this->form_validation->run() && $this->upload->do_upload('poster'))     
         {   
+            $namafile = $this->upload->data();
+                           
             $waktusekarang = date("Y-m-d H:i:s");
             $params = array(
 				'id_user' => $this->input->post('id_user'),
@@ -57,7 +71,7 @@ class Event_event extends CI_Controller{
 				'jam_mulai' => $this->input->post('jam_mulai'),
 				'jam_selesai' => $this->input->post('jam_selesai'),
 				'jumlah_tiket' => $this->input->post('jumlah_tiket'),
-				'poster' => $this->input->post('poster'),
+				'poster' => $namafile['file_name'],
 				'create_at' => $waktusekarang,
 				'deskripsi_acara' => $this->input->post('deskripsi_acara'),
             );
@@ -94,8 +108,19 @@ class Event_event extends CI_Controller{
 			$this->form_validation->set_rules('jumlah_tiket','Jumlah Tiket','required');
 			$this->form_validation->set_rules('deskripsi_acara','Deskripsi Acara','required');
             
-			if($this->form_validation->run())     
+            $config['upload_path']          = './poster/';
+            $config['allowed_types']        = 'gif|jpg|png';
+            $config['max_size']             = 0;
+            $config['max_width']            = 0;
+            $config['max_height']           = 0;
+            
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+            
+			if($this->form_validation->run() && $this->upload->do_upload('poster'))     
             {   
+                unlink('./poster/'.$data['event_event']['poster'].'');
+                $namafile = $this->upload->data();
                 $waktusekarang = date("Y-m-d H:i:s");
                 $params = array(
 					'id_user' => $this->input->post('id_user'),
@@ -108,7 +133,7 @@ class Event_event extends CI_Controller{
 					'jam_mulai' => $this->input->post('jam_mulai'),
 					'jam_selesai' => $this->input->post('jam_selesai'),
 					'jumlah_tiket' => $this->input->post('jumlah_tiket'),
-					'poster' => $this->input->post('poster'),
+					'poster' => $namafile['file_name'],
 					'update_at' => $waktusekarang,
 					'deskripsi_acara' => $this->input->post('deskripsi_acara'),
                 );

@@ -4,15 +4,10 @@
             <div class="box-header with-border">
               	<h3 class="box-title">Event Event Add</h3>
             </div>
-            <?php echo form_open('event_event/add'); ?>
+            <?php echo form_open_multipart('event_event/add'); ?>
           	<div class="box-body">
           		<div class="row clearfix">
-					<div class="col-md-6">
-						<label for="id_user" class="control-label">Id User</label>
-						<div class="form-group">
-							<input type="hidden" name="id_user" value="<?php echo $this->session->userdata['logged_in']['id_user'];?>" class="form-control" id="id_user" />
-						</div>
-					</div>
+				  <input type="hidden" name="id_user" value="<?php echo $this->session->userdata['logged_in']['id_user'];?>" class="form-control" id="id_user" />
 					<div class="col-md-6">
 						<label for="name_event" class="control-label"><span class="text-danger">*</span>Name Event</label>
 						<div class="form-group">
@@ -72,7 +67,7 @@
 					<div class="col-md-6">
 						<label for="poster" class="control-label">Poster</label>
 						<div class="form-group">
-							<input type="text" name="poster" value="<?php echo $this->input->post('poster'); ?>" class="form-control" id="poster" />
+							<input type='file'  class="btn btn-primary btn-file" name='poster' size='20' value="<?php echo $this->input->post('poster'); ?>" id="poster"/>
 						</div>
 					</div>
 					<div class="col-md-6">
