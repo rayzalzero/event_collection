@@ -28,6 +28,16 @@ class Event_event_model extends CI_Model
         $this->db->order_by('id_event', 'desc');
         return $this->db->get('event_event')->result_array();
     }
+    /*
+     * Get all event_event_by_creator
+     */
+    function get_all_event_event_by_creator($id_user)
+    {
+        $this->db->select('id_event, name_event, lokasi, pembicara, tanggal_mulai, jumlah_tiket, deskripsi_acara');
+        $this->db->where('id_user',$id_user);
+        $this->db->order_by('id_event', 'desc');
+        return $this->db->get('event_event')->result_array();
+    }
         
     /*
      * function to add new event_event

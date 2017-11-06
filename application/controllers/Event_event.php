@@ -23,11 +23,14 @@ class Event_event extends CI_Controller{
      */
     function index()
     {
-        $data['event_event'] = $this->Event_event_model->get_all_event_event();
+        if ($this->session->userdata['logged_in']['level'] == 0) {
+            $data['event_event'] = $this->Event_event_model->get_all_event_event();
+        } else {
+            $data['event_event'] = $this->Event_event_model->get_all_event_event_by_creator($this->session->userdata['logged_in']['id_user']);
+        } 
         
         $data['_view'] = 'event_event/index';
         $this->load->view('layouts/main',$data);
-        //$this->load->view('auth.php');
     }
 
     /*

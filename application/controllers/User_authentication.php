@@ -95,18 +95,17 @@ class User_Authentication extends CI_Controller
                     );
                     // Add user data in session
                     $this->session->set_userdata('logged_in', $session_data);
-                    //print_r($this->session->userdata['logged_in']['level']);
                     if ($this->session->userdata['logged_in']['level'] == 0) {
                         print_r("ini admin");
                         redirect('dashboard/');
                     }if ($this->session->userdata['logged_in']['level'] == 1) {
                         print_r("Creator");
+                        redirect('dashboard/');
+
                     }
                     else {
                         print_r("silahkan buat halaman user");
                     }
-                    
-                    //$this->load->view('dashboard');
                 }
             } else {
                 $data = array(
@@ -120,7 +119,6 @@ class User_Authentication extends CI_Controller
 // Logout from admin page
     public function logout()
     {
-
         // Removing session data
         $sess_array = array(
         'username' => ''
