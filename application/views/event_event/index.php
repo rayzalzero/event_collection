@@ -28,8 +28,10 @@
 						<td><?php echo $e['deskripsi_acara']; ?></td>
 						<td>
                             <a href="<?php echo site_url('event_event/edit/'.$e['id_event']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
-                            <a href="<?php echo site_url('event_event/remove/'.$e['id_event']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
-                            <a href="#" class="btn btn-info btn-xs"><span class="fa fa-eye"></span> Preview</a>
+                            <a href="<?php echo site_url('event_event/remove/'.$e['id_event']); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure delete <?php echo $e['name_event']?> ?')"><span class="fa fa-trash"></span> Delete</a>
+                            <a href="#" class="btn btn-info btn-xs"><span class="fa fa-eye" ></span> Preview</a>
+                            <a href="#" class="btn btn-info btn-xs"><span class="fa fa-eye"></span> Peserta</a>
+                            <button type="button" class="btn btn-info btn-xs" id="priview"><span class="fa fa-eye"></span> Info</button>
                         </td>
                     </tr>
                     <?php } ?>
@@ -39,3 +41,13 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="<?php echo base_url()?>resources/js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){	
+            $('#priview').click(function(){
+			alert('makan')	
+				
+			});
+        });
+	</script>
+				
