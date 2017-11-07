@@ -30,7 +30,7 @@ class User_Authentication extends CI_Controller
 
     public function login()
     {
-        $this->load->view('login_form');
+        $this->load->view('/home/login');
     }
 // Show registration page
     public function user_registration_show()
@@ -105,10 +105,10 @@ class User_Authentication extends CI_Controller
                     }if ($this->session->userdata['logged_in']['level'] == 1) {
                         print_r("Creator");
                         redirect('dashboard/');
-
                     }
                     else {
                         print_r("silahkan buat halaman user");
+                        redirect('/');
                     }
                 }
             } else {
@@ -129,7 +129,7 @@ class User_Authentication extends CI_Controller
         );
         $this->session->unset_userdata('logged_in', $sess_array);
         $data['message_display'] = 'Successfully Logout';
-        $this->load->view('login_form', $data);
+        $this->load->view('/home/login', $data);
         //redirect('/');
     }
 }

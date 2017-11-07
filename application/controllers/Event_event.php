@@ -80,6 +80,11 @@ class Event_event extends CI_Controller{
             );
             
             $event_event_id = $this->Event_event_model->add_event_event($params);
+            if ($event_event_id) {
+                $this->session->set_flashdata('success', 'Berhasil tambah data!');
+            } else {
+                $this->session->set_flashdata('error', 'Gagal menambahkan data!');
+            }
             redirect('event_event/index');
         }
         else
@@ -89,6 +94,13 @@ class Event_event extends CI_Controller{
         }
     }  
 
+    /*
+     * Editing a event_event
+     */
+    public function edit_event_com($id) {
+        $data = $this->Event_event_model->get_event_event($id);
+        echo json_encode($data);
+    }
     /*
      * Editing a event_event
      */
@@ -165,10 +177,12 @@ class Event_event extends CI_Controller{
         if(isset($event_event['id_event']))
         {
             $this->Event_event_model->delete_event_event($id_event);
+            $this->session->set_flashdata('success', 'Berhasil tambah data!');
             redirect('event_event/index');
         }
         else
             show_error('The event_event you are trying to delete does not exist.');
+            $this->session->set_flashdata('error', 'Gagal menambahkan data!');
     }
     
 }

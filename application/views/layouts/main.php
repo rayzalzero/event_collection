@@ -87,17 +87,9 @@
                             </a>
                         </li>
 						<li>
-                            <a href="#">
+                            <a href="<?php echo site_url('event_event/index');?>">
                                 <i class="fa fa-handshake-o"></i> <span> Acara</span>
                             </a>
-                            <ul class="treeview-menu">
-								<li class="active">
-                                    <a href="<?php echo site_url('event_event/add');?>"><i class="fa fa-plus"></i> Tambah Acara</a>
-                                </li>
-								<li>
-                                    <a href="<?php echo site_url('event_event/index');?>"><i class="fa fa-list-ul"></i> Daftar Acara</a>
-                                </li>
-							</ul>
                         </li>
 						<li>
                             <a href="#">
