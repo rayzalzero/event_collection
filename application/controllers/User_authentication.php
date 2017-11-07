@@ -25,9 +25,13 @@ class User_Authentication extends CI_Controller
 // Show login page
     public function index()
     {
-        $this->load->view('login_form');
+        $this->load->view('index.htm');
     }
 
+ public function login()
+    {
+        $this->load->view('login_form');
+    }
 // Show registration page
     public function user_registration_show()
     {
