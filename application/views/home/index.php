@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Piccolo Theme</title>
+    <title>Event Collection</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS
@@ -22,7 +22,7 @@
 
     <!-- Favicons
 ================================================== -->
-    <link rel="shortcut icon" href="template/img/favicon.ico">
+    <link rel="shortcut icon" href="template/img/e.ico">
     <link rel="apple-touch-icon" href="template/img/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="template/img/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="template/img/apple-touch-icon-114x114.png">
@@ -80,8 +80,8 @@
             <!-- Logo
         ================================================== -->
             <div class="span5 logo">
-                <a href="index.htm"><img src="template/img/piccolo-logo.png" alt="" /></a>
-                <h5>Big Things... Small Packages</h5>
+                <a href="index.htm"><img src="template/img/download.png" alt="" /></a>
+                
             </div>
 
             <!-- Main Navigation
@@ -181,20 +181,15 @@
                 <div class="flexslider">
                     <ul class="slides">
                         <li>
-                            <a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a>
+                            <a href="gallery-single.htm"><img src="template/img/gallery/1.jpg" alt="slider" /></a>
                         </li>
                         <li>
-                            <a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a>
+                            <a href="gallery-single.htm"><img src="template/img/gallery/2.jpg" alt="slider" /></a>
                         </li>
                         <li>
-                            <a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a>
+                            <a href="gallery-single.htm"><img src="template/img/gallery/3.jpg" alt="slider" /></a>
                         </li>
-                        <li>
-                            <a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a>
-                        </li>
-                        <li>
-                            <a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a>
-                        </li>
+                        
                     </ul>
                 </div>
             </div>
@@ -202,9 +197,9 @@
             <!-- Headline Text
         ================================================== -->
             <div class="span4">
-                <h3>Welcome to Piccolo. <br /> A Big Theme in a Small Package.</h3>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pretium vulputate magna sit amet blandit.</p>
-                <p>Cras rutrum, massa non blandit convallis, est lacus gravida enim, eu fermentum ligula orci et tortor. In sit amet nisl ac leo pulvinar molestie. Morbi blandit ultricies ultrices.</p>
+                <h3>Welcome to Event Collection. <br /> Sistem Informasi Event STMIK Akakom.</h3>
+                <p class="lead"><i>Lets Join Us</i>.</p>
+                <p></p>
                 <a href="#"><i class="icon-plus-sign"></i>Read More</a>
             </div>
         </div>
@@ -214,9 +209,9 @@
             <!-- Begin Gallery Row -->
 
             <div class="span12">
-                <h5 class="title-bg">Recent Work
-                    <small>That we are most proud of</small>
-                    <button class="btn btn-mini btn-inverse hidden-phone" type="button">View Portfolio</button>
+                <h5 class="title-bg">Recent Event AND NEW EVENT
+                    <small>That Pictures Bellow</small>
+                    <button class="btn btn-mini btn-inverse hidden-phone" type="button">......</button>
                 </h5>
 
                 <!-- Gallery Thumbnails
@@ -229,11 +224,11 @@
                         <li class="span3 gallery-item" data-id="id-1" data-type="illustration">
                             <span class="gallery-hover-4col hidden-phone hidden-tablet">
                             <span class="gallery-icons">
-                                <a href="template/img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
+                                <a href="template/img/gallery/na.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
                                 <a href="gallery-single.htm" class="item-details-link"></a>
                             </span>
                             </span>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
+                            <a href="gallery-single.htm"><img src="template/img/gallery/na.jpg" alt="Gallery"></a>
                             <span class="project-details"><a href="gallery-single.htm">Custom Illustration</a>For an international ad campaign.</span>
                         </li>
 
@@ -245,7 +240,7 @@
                                 <a href="gallery-single.htm" class="item-details-link"></a>
                             </span>
                             </span>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
+                            <a href="gallery-single.htm"><img src="template/img/gallery/mo.jpg" alt="Gallery"></a>
                             <span class="project-details"><a href="gallery-single.htm">3 Color Poster Design</a>For a regional festival event.</span>
                         </li>
 
@@ -257,7 +252,7 @@
                                 <a href="#" class="item-details-link"></a>
                             </span>
                             </span>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
+                            <a href="gallery-single.htm"><img src="template/img/gallery/yj.jpg" alt="Gallery"></a>
                             <span class="project-details"><a href="gallery-single.htm">Ink Pen Illustration</a>Created for a best selling children's book.</span>
                         </li>
 
@@ -269,7 +264,7 @@
                                 <a href="gallery-single.htm" class="item-details-link"></a>
                             </span>
                             </span>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
+                            <a href="gallery-single.htm"><img src="template/img/gallery/lh.jpg" alt="Gallery"></a>
                             <span class="project-details"><a href="gallery-single.htm">Custom Illustration</a>For an international add campaign.</span>
                         </li>
 
@@ -397,7 +392,7 @@
                         <div class="active item">
                             <a href="blog-single.htm"><img src="img/gallery/blog-med-img-1.jpg" alt="" class="align-left blog-thumb-preview" /></a>
                             <div class="post-info clearfix">
-                                <h4><a href="blog-single.htm">A subject that is beautiful in itself</a></h4>
+                                
                                 <ul class="blog-details-preview">
                                     <li><i class="icon-calendar"></i><strong>Posted on:</strong> Sept 4, 2015
                                         <li>
@@ -408,8 +403,7 @@
                                                             <li><i class="icon-tags"></i> <a href="#">photoshop</a>, <a href="#">tutorials</a>, <a href="#">illustration</a>
                                 </ul>
                             </div>
-                            <p class="blog-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum. Vestibulum lectus tellus, aliquet et iaculis sed, volutpat vel erat. <a href="#">Read more</a>
-                                <p>
+                            
                         </div>
 
                         <!-- Blog Item 2 -->
@@ -469,39 +463,12 @@
                     <!-- Carousel items -->
                     <div class="carousel-inner">
 
-                        <div class="active item">
-                            <p class="quote-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum. Morbi blandit ultricies ultrices. Vivamus nec lectus sed orci molestie molestie."<cite>- Client Name, Big Company</cite></p>
-                        </div>
-
-                        <div class="item">
-                            <p class="quote-text">"Adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum. Morbi blandit ultricies ultrices. Vivamus nec lectus sed orci molestie molestie."<cite>- Another Client Name, Company Name</cite></p>
-                        </div>
-
-                        <div class="item">
-                            <p class="quote-text">"Mauris eget tellus sem. Cras sollicitudin sem eu elit aliquam quis condimentum nulla suscipit. Nam sed magna ante. Ut eget suscipit mauris."<cite>- On More Client, The Company</cite></p>
-                        </div>
-
+                        
                     </div>
                 </div>
 
                 <!-- Client Logo Thumbs-->
-                <ul class="client-logos">
-                    <li>
-                        <a href="#" class="client-link"><img src="img/gallery/client-img-1.png" alt="Client"></a>
-                    </li>
-                    <li>
-                        <a href="#" class="client-link"><img src="img/gallery/client-img-2.png" alt="Client"></a>
-                    </li>
-                    <li>
-                        <a href="#" class="client-link"><img src="img/gallery/client-img-3.png" alt="Client"></a>
-                    </li>
-                    <li>
-                        <a href="#" class="client-link"><img src="img/gallery/client-img-4.png" alt="Client"></a>
-                    </li>
-                    <li>
-                        <a href="#" class="client-link"><img src="img/gallery/client-img-5.png" alt="Client"></a>
-                    </li>
-                </ul>
+               
 
             </div>
 
@@ -520,11 +487,11 @@
             <div class="row footer-row">
                 <div class="span3 footer-col">
                     <h5>About Us</h5>
-                    <img src="img/piccolo-footer-logo.png" alt="Piccolo" /><br /><br />
+                    <img src="template/img/piccolo-footer-logo.png" alt="Piccolo" /><br /><br />
                     <address>
-                        <strong>Design Team</strong><br />
-                        123 Main St, Suite 500<br />
-                        New York, NY 12345<br />
+                        <strong>......</strong><br />
+                        ......................<br />
+                        ......................<br />
                     </address>
                     <ul class="social-icons">
                         <li>
@@ -544,66 +511,9 @@
                         </li>
                     </ul>
                 </div>
-                <div class="span3 footer-col">
-                    <h5>Latest Tweets</h5>
-                    <ul>
-                        <li><a href="#">@room122</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li><a href="#">@room122</a> In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum. Morbi blandit ultricies ultrices.</li>
-                        <li><a href="#">@room122</a> Vivamus nec lectus sed orci molestie molestie. Etiam mattis neque eu orci rutrum aliquam.</li>
-                    </ul>
-                </div>
-                <div class="span3 footer-col">
-                    <h5>Latest Posts</h5>
-                    <ul class="post-list">
-                        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-                        <li><a href="#">Consectetur adipiscing elit est lacus gravida</a></li>
-                        <li><a href="#">Lectus sed orci molestie molestie etiam</a></li>
-                        <li><a href="#">Mattis consectetur adipiscing elit est lacus</a></li>
-                        <li><a href="#">Cras rutrum, massa non blandit convallis est</a></li>
-                    </ul>
-                </div>
-                <div class="span3 footer-col">
-                    <h5>Flickr Photos</h5>
-                    <ul class="img-feed">
-                        <li>
-                            <a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+              
+               
+               
 
             <div class="row">
                 <!-- Begin Sub Footer -->
@@ -612,7 +522,9 @@
                         <div class="span6"><span class="left">Copyright 2012 Piccolo Theme. All rights reserved.</span></div>
                         <div class="span6">
                             <span class="right">
-                            <a href="#">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Gallery</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Blog</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Contact</a>
+                            <a href="#">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                            <a href="#">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">
+                                Gallery</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Blog</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Contact</a>
                             </span>
                         </div>
                     </div>
