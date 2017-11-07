@@ -70,7 +70,7 @@
             	<button type="submit" class="btn btn-success">
 					<i class="fa fa-check"></i> Save
 				</button>
-				<input type="button" class="btn btn-success" onclick="location.href='http://localhost/web/code_igniter/eventakakom/event_user/';" value="Cancel"></input>
+				<input type="button" class="btn btn-success" onclick="location.href='<?php echo site_url('event_user/'); ?>';" value="Cancel"></input>
 	        </div>				
 			<?php echo form_close(); ?>
 		</div>

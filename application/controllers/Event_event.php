@@ -62,7 +62,7 @@ class Event_event extends CI_Controller{
         if($this->form_validation->run() && $this->upload->do_upload('poster'))     
         {   
             $namafile = $this->upload->data();
-                           
+            
             $waktusekarang = date("Y-m-d H:i:s");
             $params = array(
 				'id_user' => $this->input->post('id_user'),
