@@ -129,7 +129,7 @@
                             </ul>
                         </li>
                         <li><a href="page-contact.htm">Contact</a></li>
-                        <li><a href="login_form.php">Login</a></li>
+                        <li><a href="<?php echo site_url('user_authentication/login');?>">Login</a></li>
                     </ul>
 
                 </div>

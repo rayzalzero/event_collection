@@ -22,13 +22,13 @@ class User_Authentication extends CI_Controller
         $this->load->library('encryption');
     }
 
-// Show login page
+    // Show login page
     public function index()
     {
-        $this->load->view('index.htm');
+        $this->load->view('home/index.php');
     }
 
- public function login()
+    public function login()
     {
         $this->load->view('login_form');
     }
