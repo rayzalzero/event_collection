@@ -304,8 +304,6 @@
                 alert('Error get data from ajax');
             }
         });
-<<<<<<< HEAD
-=======
         } else {
             data.name_event = '';
             $('[id="name_event"]').val(data.name_event);
@@ -319,7 +317,6 @@
             $('[name="deskripsi_acara"]').val('');
         }
     
->>>>>>> 3b8e852fb4d991bf69e3a22095f177bed0acb903
     }
 </script>
 				
