@@ -173,7 +173,6 @@
   </div>
 </div>
 <!-- Tutup Modal -->
-<<<<<<< HEAD
 <!-- Modal -->
 <div id="tampil_peserta" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -228,8 +227,6 @@
   </div>
 </div>
 <!-- Tutup Modal -->
-=======
->>>>>>> 3b8e852fb4d991bf69e3a22095f177bed0acb903
 
 <script type="text/javascript">
     function update_event(id) {
