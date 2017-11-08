@@ -47,6 +47,13 @@ class Event_event_model extends CI_Model
         $this->db->insert('event_event',$params);
         return $this->db->insert_id();
     }
+
+    function check_event_event($params)
+    {
+        $this->db->select('*');
+        $this->db->where('id_event',$params);
+        return $this->db->get('event_event')->result_array();
+    }
     
     /*
      * function to update event_event
@@ -63,5 +70,20 @@ class Event_event_model extends CI_Model
     function delete_event_event($id_event)
     {
         return $this->db->delete('event_event',array('id_event'=>$id_event));
+    }
+
+    /*
+     * function to tampil peserta
+     */
+    function tampil_peserta($id)
+    {
+        $this->db->select('*');
+        $this->db->from('event_participant ep');
+        $this->db->join('event_event ee','ep.id_event = ee.id_event');
+        $this->db->join('event_users eu','ep.id_user = eu.id_user');
+        $this->db->where('ee.id_event='.$id.'');
+        $this->db->order_by('ep.create_at', 'desc');
+        $data = $this->db->get()->result_array();
+        return $data;
     }
 }
