@@ -22,7 +22,7 @@
             <div class="box-header">
                 <h3 class="box-title">Event Event Listing</h3>
             	<div class="box-tools">
-                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#tambah_event">Tambah Event <span class="m-l-5"><i class="fa fa-plus"></i></span></button>
+                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#tambah_event" onclick="update_event()">Tambah Event <span class="m-l-5"><i class="fa fa-plus"></i></span></button>
                 </div>
             </div>
             <div class="box-body">
@@ -82,7 +82,7 @@
         <?php echo form_open_multipart('event_event/add'); ?>
                 <div class="box-body">
                     <div class="row clearfix">
-                    <input type="hidden" name="id_user" value="<?php echo $this->session->userdata['logged_in']['id_user'];?>" class="form-control" id="id_user" />
+                    <input type="hidden" name="id_user" class="form-control" id="id_user" />
                         <div class="col-md-6">
                             <label for="name_event" class="control-label"><span class="text-danger">*</span>Name Event</label>
                             <div class="form-group">
@@ -168,8 +168,10 @@
 <!-- Tutup Modal -->
 <script type="text/javascript">
     function update_event(id) {
-    //$('#form')[0].reset();
-    console.log(id)
+        if (id) {
+            console.log(id)
+            ////$('#form')[0].reset();
+      console.log(id)
       $.ajax({
         url : "<?php echo base_url();?>event_event/edit_event_com/" + id,
         type: "GET",
@@ -196,6 +198,10 @@
             alert('Error get data from ajax');
         }
         });
+        } else {
+            data = ""
+        }
+    
     }
 </script>
 				

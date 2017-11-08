@@ -225,7 +225,7 @@
                             <span class="gallery-hover-4col hidden-phone hidden-tablet">
                             <span class="gallery-icons">
                                 <a href="template/img/gallery/na.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
+                                <a href="<?php echo site_url('home/'+4);?>" class="item-details-link"></a>
                             </span>
                             </span>
                             <a href="gallery-single.htm"><img src="template/img/gallery/na.jpg" alt="Gallery"></a>

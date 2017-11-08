@@ -77,7 +77,7 @@ class User_Authentication extends CI_Controller
                 //$this->load->view('admin_page');
                 $this->load->view('dashboard');
             } else {
-                $this->load->view('login_form');
+                $this->load->view('home/login');
             }
         } else {
             $data = array(
@@ -115,7 +115,7 @@ class User_Authentication extends CI_Controller
                 $data = array(
                 'error_message' => 'Invalid Username or Password'
                 );
-                $this->load->view('login_form', $data);
+                $this->load->view('home/login', $data);
             }
         }
     }
