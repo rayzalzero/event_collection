@@ -3,7 +3,7 @@
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title">
-                Please navigate to the appropriate controller / action to open the associated function with your generated code.
+                Presentase acara paling dekat, informasi peserta acara, presentase acara paling baik.
                 </h3>
             </div>
         </div>
