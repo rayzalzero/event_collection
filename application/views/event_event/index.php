@@ -304,19 +304,6 @@
                 alert('Error get data from ajax');
             }
         });
-        } else {
-            data.name_event = '';
-            $('[id="name_event"]').val(data.name_event);
-            $('[name="lokasi"]').val(data.lokasi);
-            $('[name="pembicara"]').val(data.pembicara);
-            $('[name="tanggal_mulai"]').val(data.tanggal_mulai);
-            $('[name="durasi_hari"]').val(data.durasi_hari);
-            $('[name="jam_mulai"]').val(data.jam_mulai);
-            $('[name="jam_selesai"]').val(data.jam_selesai);
-            $('[name="jumlah_tiket"]').val(data.jumlah_tiket);
-            $('[name="deskripsi_acara"]').val('');
-        }
-    
-    }
+        } 
 </script>
 				
