@@ -213,22 +213,24 @@
 
                 <!-- Gallery Thumbnails
         ================================================== -->
-
+        <?php print_r($event_event); ?>
+        <?php foreach($event_event as $e){ ?>
                 <div class="row clearfix no-margin">
                     <ul class="gallery-post-grid holder">
-
+                    <?php //echo $event_event['poster']; ?>
                         <!-- Gallery Item 1 -->
                         <li class="span3 gallery-item" data-id="id-1" data-type="illustration">
                             <span class="gallery-hover-4col hidden-phone hidden-tablet">
                             <span class="gallery-icons">
-                                <a href="template/img/gallery/na.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                 <a href="<?php echo site_url('user/gallery');?>" class="item-details-link"></a>
+                                <a href="" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
+                                 <a href="<?php echo site_url('/home/gallery/'.$e['id_event'].'');?>" class="item-details-link"></a>
                             </span>
                             </span>
-                            <a href="<?php echo site_url('home/gallery');?>"><img src="template/img/gallery/na.jpg" alt="Gallery"></a>
+                            <?php echo $e['poster'];?>
+                            <a href="<?php echo site_url('home/gallery');?>"><img src="<?php echo site_url('poster/'.$e['poster'].'');?>" alt="Gallery"></a>
                             <span class="project-details"><a href="gallery-single.htm">Custom Illustration</a>For an international ad campaign.</span>
                         </li>
-
+        <?php } ?>
                         <!-- Gallery Item 2 -->
                         <li class="span3 gallery-item" data-id="id-2" data-type="illustration">
                             <span class="gallery-hover-4col hidden-phone hidden-tablet">

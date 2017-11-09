@@ -145,14 +145,13 @@
         <!-- Gallery Items
         ================================================== --> 
         <div class="span12 gallery-single">
-
             <div class="row">
                 <div class="span6">
-                    <img src="<?php echo site_url('template/img/gallery/na.jpg');?>" class="align-left thumbnail" alt="image">
+                    <img src="<?php print_r(site_url('poster/'.$detail['poster'].''));?>" class="align-left thumbnail" style="width:500px; height:500px;" alt="image">
                 </div>
                 <div class="span6">
-                    <h2>Event Ngising Bersama</h2>
-                    <p class="lead">Event memperingati hari ngising internasional</p>
+                    <h2><?php print_r($detail['name_event']);?></h2>
+                    <p class="lead"><?php print_r($detail['deskripsi_acara']);?></p>
 
                     <ul class="project-info">
                         <li><h6>Date:</h6> 09/12/17</li>
