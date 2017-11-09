@@ -9,31 +9,28 @@
     <!-- CSS
 ================================================== -->
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="template/css/bootstrap.css">
-    <link rel="stylesheet" href="template/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="template/css/prettyPhoto.css" />
-    <link rel="stylesheet" href="template/css/flexslider.css" />
-    <link rel="stylesheet" href="template/css/custom-styles.css">
+    <link rel="stylesheet" href="<?php echo site_url('template/css/bootstrap.css');?>">
+    <link rel="stylesheet" href="<?php echo site_url('template/css/bootstrap-responsive.css');?>">
+    <link rel="stylesheet" href="<?php echo site_url('template/css/prettyPhoto.css');?>">
+    <link rel="stylesheet" href="<?php echo site_url('template/css/flexslider.css');?>">
+    <link rel="stylesheet" href="<?php echo site_url('template/css/custom-styles.css');?>">
 
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <link rel="stylesheet" href="css/style-ie.css"/>
-<![endif]-->
+   
 
     <!-- Favicons
 ================================================== -->
-    <link rel="shortcut icon" href="template/img/e.ico">
-    <link rel="apple-touch-icon" href="template/img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="template/img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="template/img/apple-touch-icon-114x114.png">
+    <link rel="shortcut icon" href="<?php echo site_url('template/img/e.ico');?>">
+    <link rel="apple-touch-icon" href="<?php echo site_url('template/img/apple-touch-icon.png');?>">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo site_url('template/img/apple-touch-icon-72x72.png');?>">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo site_url('template/img/apple-touch-icon-114x114.png');?>">
 
     <!-- JS
 ================================================== -->
     <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-    <script src="template/js/bootstrap.js"></script>
-    <script src="template/js/jquery.prettyPhoto.js"></script>
-    <script src="template/js/jquery.flexslider.js"></script>
-    <script src="template/js/jquery.custom.js"></script>
+    <script src="<?php echo site_url('template/js/bootstrap.js');?>"></script>
+    <script src="<?php echo site_url('template/js/jquery.prettyPhoto.js');?>"></script>
+    <script src="<?php echo site_url('template/js/jquery.flexslider.js');?>"></script>
+    <script src="<?php echo site_url('template/js/jquery.custom.js');?>"></script>
     <script type="text/javascript">
         $(document).ready(function() {
 
@@ -225,10 +222,10 @@
                             <span class="gallery-hover-4col hidden-phone hidden-tablet">
                             <span class="gallery-icons">
                                 <a href="template/img/gallery/na.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="<?php echo site_url('home/'+4);?>" class="item-details-link"></a>
+                                 <a href="<?php echo site_url('user/gallery');?>" class="item-details-link"></a>
                             </span>
                             </span>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/na.jpg" alt="Gallery"></a>
+                            <a href="<?php echo site_url('home/gallery');?>"><img src="template/img/gallery/na.jpg" alt="Gallery"></a>
                             <span class="project-details"><a href="gallery-single.htm">Custom Illustration</a>For an international ad campaign.</span>
                         </li>
 
@@ -390,7 +387,7 @@
 
                         <!-- Blog Item 1 -->
                         <div class="active item">
-                            <a href="blog-single.htm"><img src="img/gallery/blog-med-img-1.jpg" alt="" class="align-left blog-thumb-preview" /></a>
+                            <a href="#"><img src="<?php echo site_url('template/img/gallery/blog-med-img-1.jpg');?>" alt="" class="align-left blog-thumb-preview" /></a>
                             <div class="post-info clearfix">
                                 
                                 <ul class="blog-details-preview">
@@ -408,7 +405,7 @@
 
                         <!-- Blog Item 2 -->
                         <div class="item">
-                            <a href="blog-single.htm"><img src="img/gallery/blog-med-img-1.jpg" alt="" class="align-left blog-thumb-preview" /></a>
+                            <a href="#"><img src="<?php echo site_url('template/img/gallery/blog-med-img-1.jpg');?>" alt="" class="align-left blog-thumb-preview" /></a>
                             <div class="post-info clearfix">
                                 <h4><a href="blog-single.htm">A great artist is always before his time</a></h4>
                                 <ul class="blog-details-preview">
@@ -427,7 +424,7 @@
 
                         <!-- Blog Item 3 -->
                         <div class="item">
-                            <a href="blog-single.htm"><img src="img/gallery/blog-med-img-1.jpg" alt="" class="align-left blog-thumb-preview" /></a>
+                            <a href="#"><img src="<?php echo site_url('template/img/gallery/blog-med-img-1.jpg');?>" alt="" class="align-left blog-thumb-preview" /></a>
                             <div class="post-info clearfix">
                                 <h4><a href="blog-single.htm">Is art everything to anybody?</a></h4>
                                 <ul class="blog-details-preview">

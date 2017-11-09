@@ -28,6 +28,11 @@ class User_Authentication extends CI_Controller
         $this->load->view('home/index.php');
     }
 
+    public function gallery()
+    {
+        $this->load->view('home/gallery.php');
+    }
+    
     public function login()
     {
         $this->load->view('/home/login');
