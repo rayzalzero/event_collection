@@ -77,7 +77,7 @@
             <!-- Logo
         ================================================== -->
             <div class="span5 logo">
-                <a href="index.htm"><img src="template/img/download.png" alt="" /></a>
+                <a href="index.htm"><img src="<?php echo site_url('template/img/download.png');?>" alt="" /></a>
                 
             </div>
 
@@ -87,45 +87,7 @@
                 <div class="navbar hidden-phone">
 
                     <ul class="nav">
-                        <li class="dropdown active">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="index.htm">Home <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="index.htm">Full Page</a></li>
-                                <li><a href="index-gallery.htm">Gallery Only</a></li>
-                                <li><a href="index-slider.htm">Slider Only</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="features.htm">Features</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="page-full-width.htm">Pages <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="page-full-width.htm">Full Width</a></li>
-                                <li><a href="page-right-sidebar.htm">Right Sidebar</a></li>
-                                <li><a href="page-left-sidebar.htm">Left Sidebar</a></li>
-                                <li><a href="page-double-sidebar.htm">Double Sidebar</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="gallery-4col.htm">Gallery <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="gallery-3col.htm">Gallery 3 Column</a></li>
-                                <li><a href="gallery-4col.htm">Gallery 4 Column</a></li>
-                                <li><a href="gallery-6col.htm">Gallery 6 Column</a></li>
-                                <li><a href="gallery-4col-circle.htm">Gallery 4 Round</a></li>
-                                <li><a href="gallery-single.htm">Gallery Single</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="blog-style1.htm">Blog <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="blog-style1.htm">Blog Style 1</a></li>
-                                <li><a href="blog-style2.htm">Blog Style 2</a></li>
-                                <li><a href="blog-style3.htm">Blog Style 3</a></li>
-                                <li><a href="blog-style4.htm">Blog Style 4</a></li>
-                                <li><a href="blog-single.htm">Blog Single</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="page-contact.htm">Contact</a></li>
+                       
                         <li><a href="<?php echo site_url('user_authentication/login');?>">Login</a></li>
                     </ul>
 
@@ -178,13 +140,13 @@
                 <div class="flexslider">
                     <ul class="slides">
                         <li>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/1.jpg" alt="slider" /></a>
+                            <a href="gallery-single.htm"><img src="<?php echo site_url('template/img/gallery/1.jpg');?>" alt="slider" /></a>
                         </li>
                         <li>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/2.jpg" alt="slider" /></a>
+                            <a href="gallery-single.htm"><img src="<?php echo site_url('template/img/gallery/2.jpg');?>" alt="slider" /></a>
                         </li>
                         <li>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/3.jpg" alt="slider" /></a>
+                            <a href="gallery-single.htm"><img src="<?php echo site_url('template/img/gallery/3.jpg');?>" alt="slider" /></a>
                         </li>
                         
                     </ul>
@@ -213,153 +175,26 @@
 
                 <!-- Gallery Thumbnails
         ================================================== -->
-
+      
                 <div class="row clearfix no-margin">
                     <ul class="gallery-post-grid holder">
-
+                   
+        <?php foreach($event_event as $e){ ?>
                         <!-- Gallery Item 1 -->
                         <li class="span3 gallery-item" data-id="id-1" data-type="illustration">
                             <span class="gallery-hover-4col hidden-phone hidden-tablet">
                             <span class="gallery-icons">
-                                <a href="template/img/gallery/na.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                 <a href="<?php echo site_url('user/gallery');?>" class="item-details-link"></a>
+                                <a href="<?php echo site_url('poster/'.$e['poster'].'');?>" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
+                                 <a href="<?php echo site_url('/home/gallery/'.$e['id_event'].'');?>" class="item-details-link"></a>
                             </span>
                             </span>
-                            <a href="<?php echo site_url('home/gallery');?>"><img src="template/img/gallery/na.jpg" alt="Gallery"></a>
-                            <span class="project-details"><a href="gallery-single.htm">Custom Illustration</a>For an international ad campaign.</span>
+                           
+                            <a href="<?php echo site_url('/home/gallery/'.$e['id_event'].'');?>"><img src="<?php echo site_url('poster/'.$e['poster'].'');?>" alt="Gallery" style="width:300px; height:220px;"></a>
+                            <span class="project-details"><a href="gallery-single.htm"><?php print_r($e['name_event']);?></a><?php print_r($e['pembicara']);?></span>
                         </li>
-
-                        <!-- Gallery Item 2 -->
-                        <li class="span3 gallery-item" data-id="id-2" data-type="illustration">
-                            <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="template/img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                            </span>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/mo.jpg" alt="Gallery"></a>
-                            <span class="project-details"><a href="gallery-single.htm">3 Color Poster Design</a>For a regional festival event.</span>
-                        </li>
-
-                        <!-- Gallery Item 3 -->
-                        <li class="span3 gallery-item" data-id="id-3" data-type="web">
-                            <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="template/img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="#" class="item-details-link"></a>
-                            </span>
-                            </span>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/yj.jpg" alt="Gallery"></a>
-                            <span class="project-details"><a href="gallery-single.htm">Ink Pen Illustration</a>Created for a best selling children's book.</span>
-                        </li>
-
-                        <!-- Gallery Item 4 -->
-                        <li class="span3 gallery-item" data-id="id-4" data-type="video">
-                            <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="template/img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                            </span>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/lh.jpg" alt="Gallery"></a>
-                            <span class="project-details"><a href="gallery-single.htm">Custom Illustration</a>For an international add campaign.</span>
-                        </li>
-
-                        <!-- Gallery Item 5 -->
-                        <li class="span3 gallery-item" data-id="id-5" data-type="web illustration">
-                            <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="template/img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                            </span>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
-                            <span class="project-details"><a href="gallery-single.htm">Icon Design</a>Classic retro style illustration.</span>
-                        </li>
-
-                        <!-- Gallery Item 6 -->
-                        <li class="span3 gallery-item" data-id="id-6" data-type="illustration design">
-                            <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="template/img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                            </span>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
-                            <span class="project-details"><a href="gallery-single.htm">Animation Cell</a>Creative storyboard illustration</span>
-                        </li>
-
-                        <!-- Gallery Item 7 -->
-                        <li class="span3 gallery-item" data-id="id-7" data-type="design">
-                            <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="template/img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                            </span>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
-                            <span class="project-details"><a href="gallery-single.htm">Poster Ad Campaign</a>Regional ad for a local company.</span>
-                        </li>
-
-                        <!-- Gallery Item 8 -->
-                        <li class="span3 gallery-item" data-id="id-8" data-type="web video">
-                            <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="template/img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                            </span>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
-                            <span class="project-details"><a href="gallery-single.htm">Magazine Ad</a>For an international add campaign.</span>
-                        </li>
-
-                        <!-- Gallery Item 9 -->
-                        <li class="span3 gallery-item" data-id="id-9" data-type="design">
-                            <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="template/img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                            </span>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
-                            <span class="project-details"><a href="gallery-single.htm">Character Designs</a>For a feature film.</span>
-                        </li>
-
-                        <!-- Gallery Item 10 -->
-                        <li class="span3 gallery-item" data-id="id-10" data-type="web design">
-                            <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="template/img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                            </span>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
-                            <span class="project-details"><a href="gallery-single.htm">Poster and Ad Design</a>For an international add campaign.</span>
-                        </li>
-
-                        <!-- Gallery Item 11 -->
-                        <li class="span3 gallery-item" data-id="id-11" data-type="illustration">
-                            <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="template/img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                            </span>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
-                            <span class="project-details"><a href="gallery-single.htm">Website and Animation</a>For a local business.</span>
-                        </li>
-
-                        <!-- Gallery Item 12 -->
-                        <li class="span3 gallery-item" data-id="id-12" data-type="illustration video">
-                            <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="template/img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                            </span>
-                            <a href="gallery-single.htm"><img src="template/img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
-                            <span class="project-details"><a href="gallery-single.htm">Branding Design</a>For an international add campaign.</span>
-                        </li>
+        <?php } ?>
+                        
+                      
                     </ul>
                 </div>
             </div>

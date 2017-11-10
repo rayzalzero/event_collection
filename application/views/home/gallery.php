@@ -145,23 +145,27 @@
         <!-- Gallery Items
         ================================================== --> 
         <div class="span12 gallery-single">
-
             <div class="row">
                 <div class="span6">
-                    <img src="<?php echo site_url('template/img/gallery/na.jpg');?>" class="align-left thumbnail" alt="image">
+                    <img src="<?php print_r(site_url('poster/'.$detail['poster'].''));?>" 
+                        class="align-left thumbnail" style="width:500px; height:500px;" alt="image">
                 </div>
                 <div class="span6">
-                    <h2>Event Ngising Bersama</h2>
-                    <p class="lead">Event memperingati hari ngising internasional</p>
+                    <h2><?php print_r($detail['name_event']);?></h2>
+                    <p class="lead"><?php print_r($detail['deskripsi_acara']);?></p>
 
                     <ul class="project-info">
-                        <li><h6>Date:</h6> 09/12/17</li>
-                        <li><h6>Organisasi:</h6> HMJ-SI</li>
+                        <li><h6>Pembicara:</h6><?php print_r($detail['pembicara']);?></li>
+                        <li><h6>Lokasi:</h6><?php print_r($detail['lokasi']);?></li>
+                        <li><h6>Tanggal:</h6><?php print_r($detail['tanggal_mulai']);?></li>
+                        <li><h6>Waktu Mulai:</h6><?php print_r($detail['jam_mulai']);?></li>
+                        <li><h6>Waktu Selesai:</h6><?php print_r($detail['jam_selesai']);?></li>
+                        <li><h6>JUmlah Tiket:</h6><?php print_r($detail['jumlah_tiket']);?></li>
                         
                     </ul>
 
                     <button class="btn btn-inverse pull-left" type="button">Visit Website</button>
-                    <a href="<?php echo site_url('index');?>" class="pull-right"><i class="icon-arrow-left"></i>Back to Gallery</a>
+                    <a href="<?php echo site_url('home/');?>" class="pull-right"><i class="icon-arrow-left"></i>Back to Gallery</a>
                 </div>
             </div>
 
