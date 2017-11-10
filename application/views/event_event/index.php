@@ -218,8 +218,7 @@
       </div>
       <div class="modal-body">
       <div class="box-body">
-      <div id="photo_detail_acara"></div>
-      <div id="nama_detail-acara"></div>      
+        <img src="<?php echo site_url('poster/p.jpg'); ?>" alt="fsdaf">              
       </div>
         <button type="button" class="btn btn-cancel" data-dismiss="modal">Close</button>
       </div>
@@ -296,14 +295,13 @@
             dataType: "JSON",
             success: function(data)
             {   
-                name = data.name_event
-                document.getElementById("nama_detail_acara").innerHTML = "<h1>data</h1>";
+                
             },
             error: function (jqXHR, textStatus, errorThrown)
             {
                 alert('Error get data from ajax');
             }
         });
-        } 
+    } 
 </script>
 				

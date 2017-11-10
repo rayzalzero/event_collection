@@ -43,7 +43,7 @@ class Event_event extends CI_Controller{
         
         $this->upload->do_upload('poster');
         $namafile = array('upload_data' => $this->upload->data());
-
+        
         $params = array(
             'id_user'           => $this->input->post('id_user'),
             'name_event'        => $this->input->post('name_event'),
