@@ -12,6 +12,7 @@ class Event_event extends CI_Controller{
         if (!$this->session->userdata['logged_in']) {
             redirect('/');
         }
+        
     } 
 
     /*
@@ -49,7 +50,7 @@ class Event_event extends CI_Controller{
             'name_event'        => $this->input->post('name_event'),
             'lokasi'            => $this->input->post('lokasi'),
             'pembicara'         => $this->input->post('pembicara'),
-            'tanggal_mulai'     => date( "Y-m-d", strtotime($this->input->post('tanggal_mulai'))),
+            'tanggal_mulai'     => date( "Y-m-d", strtotime((strtr($this->input->post('tanggal_mulai'), '/', '-')))),
             'durasi_hari'       => $this->input->post('durasi_hari'),
             'jam_mulai'         => $this->input->post('jam_mulai'),
             'jam_selesai'       => $this->input->post('jam_selesai'),
@@ -64,7 +65,7 @@ class Event_event extends CI_Controller{
             'name_event'        => $this->input->post('name_event'),
             'lokasi'            => $this->input->post('lokasi'),
             'pembicara'         => $this->input->post('pembicara'),
-            'tanggal_mulai'     => date( "Y-m-d", strtotime($this->input->post('tanggal_mulai'))),
+            'tanggal_mulai'     => date( "Y-m-d", strtotime((strtr($this->input->post('tanggal_mulai'), '/', '-')))),
             'durasi_hari'       => $this->input->post('durasi_hari'),
             'jam_mulai'         => $this->input->post('jam_mulai'),
             'jam_selesai'       => $this->input->post('jam_selesai'),
@@ -73,22 +74,28 @@ class Event_event extends CI_Controller{
             'update_at'         => date('Y-m-d H:i:s'),
             'deskripsi_acara'   => $this->input->post('deskripsi_acara'),
         );
+
+        $event_check = $this->Event_event_model->get_event_event($this->input->post('id_event'));
         
-        $event_check = $this->Event_event_model->get_event_event($id_event);
-        
-        if (isset($event_event['id_event']) && $this->Event_event_model->update_event_event($this->input->post('id_event'),$paramsupdate)) {
-            $this->session->set_flashdata('success', 'Berhasil update data!');
-            redirect('event_event/index');
-        } else {
-            $event_event_id = $this->Event_event_model->add_event_event($params);
+        if ($event_check['id_event'] === $this->input->post('id_event')) {
+            unlink($config['upload_path'].'/'.$event_check['poster']);
             
-            if ($event_event_id) {
+            $update = $this->Event_event_model->update_event_event($this->input->post('id_event'),$paramsupdate);
+            if ($update) {
+                $this->session->set_flashdata('success', 'Berhasil update data!');
+            } else {
+                $this->session->set_flashdata('error', 'Gagal update data!');
+            }
+            redirect('event_event/index');
+        }else{
+            $tambah = $this->Event_event_model->add_event_event($params);
+            if ($tambah) {
                 $this->session->set_flashdata('success', 'Berhasil tambah data!');
             } else {
                 $this->session->set_flashdata('error', 'Gagal menambahkan data!');
             }
             redirect('event_event/index');
-        } 
+        }
     }  
 
     /*
@@ -112,18 +119,20 @@ class Event_event extends CI_Controller{
      */
     function remove($id_event)
     {
+        $config['upload_path']          = './poster/';
         $event_event = $this->Event_event_model->get_event_event($id_event);
 
         // check if the event_event exists before trying to delete it
         if(isset($event_event['id_event']))
         {
+            unlink($config['upload_path'].'/'.$event_event['poster']);
             $this->Event_event_model->delete_event_event($id_event);
-            $this->session->set_flashdata('success', 'Berhasil tambah data!');
+            $this->session->set_flashdata('success', 'Berhasil hapus data!');
             redirect('event_event/index');
         }
         else
             show_error('The event_event you are trying to delete does not exist.');
-            $this->session->set_flashdata('error', 'Gagal menambahkan data!');
+            $this->session->set_flashdata('error', 'Gagal menghapus data!');
     }
     
 }

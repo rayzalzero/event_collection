@@ -8,9 +8,6 @@ class Home extends CI_Controller{
         $this->load->model('Home_model');
         $this->load->library('encryption');
         $this->load->library('session');
-        // if (!$this->session->userdata['logged_in']) {
-        //     redirect('/');
-        // }
     } 
 
     /*

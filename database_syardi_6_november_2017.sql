@@ -38,11 +38,11 @@ CREATE TABLE `event_event` (
   PRIMARY KEY (`id_event`),
   KEY `id_user` (`id_user`),
   CONSTRAINT `event_event_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `event_users` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=latin1;
 
 /*Data for the table `event_event` */
 
-insert  into `event_event`(`id_event`,`id_user`,`name_event`,`lokasi`,`pembicara`,`tanggal_mulai`,`durasi_hari`,`jam_mulai`,`jam_selesai`,`deskripsi_acara`,`jumlah_tiket`,`poster`,`create_at`,`update_at`) values (40,13,'Event','Yogyakarta','Naufal Riza Fatahillah','2017-01-12',5,'08:00:00','08:00:00','Acara',100,'Screenshot_from_2017-11-03_21-55-561.png','2017-11-04 11:54:19','2017-11-04 12:04:43'),(41,11,'Event HMJSI','STMIK AKAKOM Yogyakarta','Naufal Riza Fatahillah','1970-01-01',5,'08:00:00','08:00:00','Akakom',100,'Screenshot_from_2017-11-03_21-55-562.png','2017-11-06 19:06:19','0000-00-00 00:00:00');
+insert  into `event_event`(`id_event`,`id_user`,`name_event`,`lokasi`,`pembicara`,`tanggal_mulai`,`durasi_hari`,`jam_mulai`,`jam_selesai`,`deskripsi_acara`,`jumlah_tiket`,`poster`,`create_at`,`update_at`) values (69,11,'Event HMJSI','STMIK AKAKOM Yogyakarta','Naufal Riza Fatahillah','1970-01-01',1,'08:00:00','08:00:00','Acara User',100,'51abcafb4b60e89eb194bf628d36d2ad.jpg','2017-11-11 01:04:47','0000-00-00 00:00:00'),(70,13,'Event','Yogyakarta','Naufal Riza Fatahillah','1970-01-01',1,'08:00:00','08:00:00','Acara Umum',100,'5e84750f298afd0108329cee0a44e16a.jpg','2017-11-11 01:06:27','0000-00-00 00:00:00');
 
 /*Table structure for table `event_participant` */
 
@@ -58,7 +58,7 @@ CREATE TABLE `event_participant` (
   KEY `id_event` (`id_event`),
   CONSTRAINT `event_participant_ibfk_1` FOREIGN KEY (`id_event`) REFERENCES `event_event` (`id_event`),
   CONSTRAINT `event_participant_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `event_users` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `event_participant` */
 
@@ -81,7 +81,7 @@ CREATE TABLE `event_users` (
 
 /*Data for the table `event_users` */
 
-insert  into `event_users`(`id_user`,`username`,`password`,`name`,`level`,`instansi`,`email`,`create_at`,`updated_at`) values (10,'akakom','96866a9d9144ae0b2bec747ba497612a','akakom','0','akakom','akakom@akakom.com','2017-11-01 10:03:05','0000-00-00 00:00:00'),(11,'user','ee11cbb19052e40b07aac0ca060c23ee','user','1','user','user@gmail.com','2017-11-01 10:10:02','0000-00-00 00:00:00'),(13,'admin','21232f297a57a5a743894a0e4a801fc3','admin','0','admin','admin@admin.com','2017-11-01 10:26:47','0000-00-00 00:00:00');
+insert  into `event_users`(`id_user`,`username`,`password`,`name`,`level`,`instansi`,`email`,`create_at`,`updated_at`) values (11,'user','ee11cbb19052e40b07aac0ca060c23ee','user','2','user','user@gmail.com','2017-11-07 20:44:26','0000-00-00 00:00:00'),(13,'admin','21232f297a57a5a743894a0e4a801fc3','admin','0','admin','admin@admin.com','2017-11-01 10:26:47','0000-00-00 00:00:00');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

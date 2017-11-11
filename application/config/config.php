@@ -517,8 +517,8 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-$config['upload_path'] = './poster/';
-$config['allowed_types'] = 'gif|jpg|png';
-$config['max_size'] = '100';
-$config['max_width'] = '1024';
-$config['max_height'] = '768';
+// $config['upload_path'] = './poster/';
+// $config['allowed_types'] = 'gif|jpg|png';
+// $config['max_size'] = '100';
+// $config['max_width'] = '1024';
+// $config['max_height'] = '768';

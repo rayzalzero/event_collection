@@ -22,7 +22,7 @@
             <?php } ?>
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Event Event Listing</h3>
+                <h3 class="box-title">Daftar Acara Akakom</h3>
             	<div class="box-tools">
                     <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#tambah_event" onclick="update_event()">Tambah Event <span class="m-l-5"><i class="fa fa-plus"></i></span></button>
                 </div>
@@ -75,16 +75,14 @@
                         </td>
                     </tr>
                     <?php } ?>
-                </table>
-                                
+                </table>        
             </div>
         </div>
     </div>
 </div>
-<!-- Modal -->
+
 <div id="tambah_event" class="modal fade" role="dialog">
   <div class="modal-dialog">
-    <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <div class="box-header with-border">
@@ -118,7 +116,7 @@
                     <div class="col-md-6">
                         <label for="tanggal_mulai" class="control-label"><span class="text-danger">*</span>Tanggal Mulai</label>
                         <div class="form-group">
-                            <input type="text" name="tanggal_mulai" class="has-datepicker form-control" id="tanggal_mulai" required />
+                            <input type="text" name="tanggal_mulai" class="has-datepicker form-control"  id="tanggal_mulai" required />
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -127,16 +125,16 @@
                             <input type="text" name="durasi_hari" class="form-control" id="durasi_hari" required />
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <label for="jam_mulai" class="control-label"><span class="text-danger">*</span>Jam Mulai</label>
                         <div class="form-group">
-                            <input type="text" name="jam_mulai" class="form-control" id="jam_mulai" required />
+                            <input type="text" name="jam_mulai" class="form-control" readonly id="jam_mulai" required />
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <label for="jam_selesai" class="control-label"><span class="text-danger">*</span>Jam Selesai</label>
                         <div class="form-group">
-                            <input type="text" name="jam_selesai" class="form-control" id="jam_selesai" required />
+                            <input type="text" name="jam_selesai" class="form-control" readonly id="jam_selesai" required />
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -172,11 +170,9 @@
     </div>
   </div>
 </div>
-<!-- Tutup Modal -->
-<!-- Modal -->
+
 <div id="tampil_peserta" class="modal fade" role="dialog">
   <div class="modal-dialog">
-    <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <div class="box-header with-border">
@@ -188,7 +184,7 @@
                 <table class="table table-striped">
                     <tr>
 						<th>Name Peserta</th>
-                        <th>Aksi</th>
+                        <th>Instansi</th>
                     </tr>
                     <tbody id="data">
                     <tr>
@@ -206,7 +202,7 @@
     </div>
   </div>
 </div>
-<!-- Tutup Modal -->
+
 <div id="tampil_acara" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -217,15 +213,14 @@
         </div>
       </div>
       <div class="modal-body">
-      <div class="box-body">
-        <img src="<?php echo site_url('poster/p.jpg'); ?>" alt="fsdaf">              
+      <div class="box-body" id="box_tampil_acara">
+                     
       </div>
         <button type="button" class="btn btn-cancel" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
-<!-- Tutup Modal -->
 
 <script type="text/javascript">
     function update_event(id) {
@@ -258,44 +253,42 @@
         }
     }
     function tampil_peserta(id_event) {
+        $( "tbody#data" ).empty();
         $.ajax({
             url : "<?php echo base_url();?>event_event/tampil_peserta/" + id_event,
             type: "GET",
             dataType: "JSON",
             success: function(data)
             {   
+                if (data==0) {
+                    var kosong = "<h4>Belom ada peserta...!</h4>";
+                    $("tbody#data").append(kosong);
+                }
                 for (var i = 0; i < data.length; i++) {
-                    // var element = array[i];
-                    var name = data[i].name;
-                    console.log(name)
-                    //var email = $("#email").val();
-                    var markup = "<tr><td>" + name + "</td><td>" + name + "</td></tr>";
+                    var markup = "<tr><td>" + data[i].name + "</td><td>" + data[i].instansi + "</td></tr>";
                     $("tbody#data").append(markup);
                 }
-                //$("tbody#data").replace('<p>wait</p>');
-                // data.forEach(function(datax) {
-                //     var name = datax.name;
-                //     //var email = $("#email").val();
-                //     var markup = "<tr><td>" + name + "</td><td>" + name + "</td></tr>";
-                //     $("tbody#data").append(markup);
-                //     markup.remove();
-                // }, this);
             },
             error: function (jqXHR, textStatus, errorThrown)
             {
                 alert('Error get data from ajax');
             }
         });
-       
+        
     }
-    function tampil_acara(id) {    
+    function tampil_acara(id) { 
+        $( "#box_tampil_acara" ).empty();   
         $.ajax({
             url : "<?php echo base_url();?>event_event/edit_event_com/" + id,
             type: "GET",
             dataType: "JSON",
             success: function(data)
             {   
-                
+                var url = "<?php echo site_url('poster/'); ?>";
+                $('#box_tampil_acara').append('<img src='+url+data.poster+' alt="'+data.name_event+'" width="500px" height="500px">');
+                $('#box_tampil_acara').append('<h1>'+data.name_event+'</h1>');
+                $('#box_tampil_acara').append('<p>Acara pada tanggal '+data.jam_mulai+'</p>');
+                $('#box_tampil_acara').append('<p>jam mulai '+data.jam_mulai+' sampai '+data.jam_selesai+'</p>');
             },
             error: function (jqXHR, textStatus, errorThrown)
             {
@@ -303,5 +296,19 @@
             }
         });
     } 
+
+    var mulai_jam = $('#jam_mulai');
+    mulai_jam.clockpicker({
+        autoclose: true
+    });
+
+    var selesai_jam = $('#jam_selesai');
+    selesai_jam.clockpicker({
+        autoclose: true
+    });
+
 </script>
+
+        
+
 				

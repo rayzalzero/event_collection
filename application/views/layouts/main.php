@@ -19,6 +19,16 @@
         <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="<?php echo site_url('resources/css/_all-skins.min.css');?>">
+
+        <link rel="stylesheet" type="text/css" href="<?php echo site_url('resources/cp/dist/bootstrap-clockpicker.min.css');?>">
+        
+        <script type="text/javascript" src="<?php echo site_url('resources/js/jquery-2.2.3.min.js');?>"></script>
+        
+        <script type="text/javascript" src="<?php echo site_url('resources/cp/assets/js/jquery.min.js');?>"></script>
+        <script type="text/javascript" src="<?php echo site_url('resources/cp/assets/js/bootstrap.min.js');?>"></script>
+
+        <script type="text/javascript" src="<?php echo site_url('resources/cp/dist/bootstrap-clockpicker.min.js');?>"></script>
+       
     </head>
     
     <body class="hold-transition skin-blue sidebar-mini">
@@ -45,30 +55,9 @@
                         <ul class="nav navbar-nav">
                         <!-- User Account: style can be found in dropdown.less -->
                             <li class="dropdown user user-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="<?php echo site_url('resources/img/user2-160x160.jpg');?>" class="user-image" alt="User Image">
-                                    <span class="hidden-xs"><?php echo $this->session->userdata['logged_in']['username'];?></span>
+                                <a href="<?php echo site_url();?>user_authentication/logout" >
+                                    <span class="glyphicon glyphicon-log-out"></span> Log out <?php echo $this->session->userdata['logged_in']['username'];?>
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <!-- User image -->
-                                    <li class="user-header">
-                                        <img src="<?php echo site_url('resources/img/user2-160x160.jpg');?>" class="img-circle" alt="User Image">
-
-                                    <p>
-                                    <?php echo $this->session->userdata['logged_in']['username'];?>
-                                        <small><?php echo $this->session->userdata['logged_in']['email'];?></small>
-                                    </p>
-                                    </li>
-                                    <!-- Menu Footer-->
-                                    <li class="user-footer">
-                                        <div class="pull-left">
-                                            <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                        </div>
-                                        <div class="pull-right">
-                                            <a href="<?php echo site_url();?>user_authentication/logout" class="btn btn-default btn-flat">Sign out</a>
-                                        </div>
-                                    </li>
-                                </ul>
                             </li>
                         </ul>
                     </div>
