@@ -287,7 +287,7 @@
                 var url = "<?php echo site_url('poster/'); ?>";
                 $('#box_tampil_acara').append('<img src='+url+data.poster+' alt="'+data.name_event+'" width="500px" height="500px">');
                 $('#box_tampil_acara').append('<h1>'+data.name_event+'</h1>');
-                $('#box_tampil_acara').append('<p>Acara pada tanggal '+data.jam_mulai+'</p>');
+                $('#box_tampil_acara').append('<p>Acara pada tanggal '+data.tanggal_mulai+'</p>');
                 $('#box_tampil_acara').append('<p>jam mulai '+data.jam_mulai+' sampai '+data.jam_selesai+'</p>');
             },
             error: function (jqXHR, textStatus, errorThrown)
