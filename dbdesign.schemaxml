@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">eventakakom</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="event_event" view="colnames">
+<left>54</left>
+<top>51</top>
+<width>116</width>
+<height>280</height>
+<sql_create_table>CREATE TABLE `event_event` (
+  `id_event` bigint(50) NOT NULL AUTO_INCREMENT,
+  `id_user` bigint(50) DEFAULT NULL,
+  `name_event` varchar(255) DEFAULT NULL,
+  `lokasi` varchar(100) DEFAULT NULL,
+  `pembicara` varchar(100) DEFAULT NULL,
+  `tanggal_mulai` date DEFAULT NULL,
+  `durasi_hari` int(11) DEFAULT NULL,
+  `jam_mulai` time DEFAULT NULL,
+  `jam_selesai` time DEFAULT NULL,
+  `deskripsi_acara` text,
+  `jumlah_tiket` int(11) DEFAULT NULL,
+  `poster` varchar(100) DEFAULT NULL,
+  `create_at` datetime DEFAULT '0000-00-00 00:00:00',
+  `update_at` datetime DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id_event`),
+  KEY `id_user` (`id_user`),
+  CONSTRAINT `event_event_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `event_users` (`id_user`)
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="event_participant" view="colnames">
+<left>347</left>
+<top>19</top>
+<width>112</width>
+<height>126</height>
+<sql_create_table>CREATE TABLE `event_participant` (
+  `id_participant` bigint(50) NOT NULL AUTO_INCREMENT,
+  `id_user` bigint(50) DEFAULT NULL,
+  `id_event` bigint(50) DEFAULT NULL,
+  `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_participant`),
+  KEY `id_user` (`id_user`),
+  KEY `id_event` (`id_event`),
+  CONSTRAINT `event_participant_ibfk_1` FOREIGN KEY (`id_event`) REFERENCES `event_event` (`id_event`),
+  CONSTRAINT `event_participant_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `event_users` (`id_user`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="event_users" view="colnames">
+<left>202</left>
+<top>212</top>
+<width>112</width>
+<height>206</height>
+<sql_create_table>CREATE TABLE `event_users` (
+  `id_user` bigint(50) NOT NULL AUTO_INCREMENT,
+  `username` varchar(25) DEFAULT NULL,
+  `password` blob,
+  `name` varchar(100) DEFAULT NULL,
+  `level` varchar(20) DEFAULT NULL,
+  `instansi` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `create_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id_user`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>
