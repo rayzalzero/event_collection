@@ -32,7 +32,7 @@ class User_Authentication extends CI_Controller
     {
         $this->load->view('home/gallery.php');
     }
-    
+
     public function login()
     {
         $this->load->view('/home/login');
@@ -42,7 +42,7 @@ class User_Authentication extends CI_Controller
     {
         $this->load->view('registration_form');
     }
-
+$arrayName = array('' => , );
 // Validate and store registration data in database
     public function new_user_registration()
     {
@@ -54,11 +54,11 @@ class User_Authentication extends CI_Controller
         if ($this->form_validation->run() == false) {
             $this->load->view('registration_form');
         } else {
-            $data = array(
+          $data = array(
             'user_name' => $this->input->post('username'),
             'user_email' => $this->input->post('email_value'),
             'user_password' => $this->input->post('password')
-            );
+          );
             $result = $this->login_database->registration_insert($data);
             if ($result == true) {
                 $data['message_display'] = 'Registration Successfully !';
