@@ -6,10 +6,10 @@
 <canvas zoom="100">
 <tables>
 <table name="event_event" view="colnames">
-<left>54</left>
-<top>51</top>
+<left>39</left>
+<top>39</top>
 <width>116</width>
-<height>280</height>
+<height>266</height>
 <sql_create_table>CREATE TABLE `event_event` (
   `id_event` bigint(50) NOT NULL AUTO_INCREMENT,
   `id_user` bigint(50) DEFAULT NULL,
@@ -31,8 +31,8 @@
 ) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="event_participant" view="colnames">
-<left>347</left>
-<top>19</top>
+<left>329</left>
+<top>7</top>
 <width>112</width>
 <height>126</height>
 <sql_create_table>CREATE TABLE `event_participant` (
@@ -48,8 +48,8 @@
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="event_users" view="colnames">
-<left>202</left>
-<top>212</top>
+<left>186</left>
+<top>131</top>
 <width>112</width>
 <height>206</height>
 <sql_create_table>CREATE TABLE `event_users` (

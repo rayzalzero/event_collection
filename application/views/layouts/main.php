@@ -3,32 +3,23 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>database_syardi_24_okt_2017 (copy)</title>
-        <!-- Tell the browser to be responsive to screen width -->
+        <title>Event Organiz</title>
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <!-- Bootstrap 3.3.6 -->
+        <!-- css -->
         <link rel="stylesheet" href="<?php echo site_url('resources/css/bootstrap.min.css');?>">
-        <!-- Font Awesome -->
         <link rel="stylesheet" href="<?php echo site_url('resources/css/font-awesome.min.css');?>">
-        <!-- Ionicons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-        <!-- Datetimepicker -->
         <link rel="stylesheet" href="<?php echo site_url('resources/css/bootstrap-datetimepicker.min.css');?>">
-        <!-- Theme style -->
         <link rel="stylesheet" href="<?php echo site_url('resources/css/AdminLTE.min.css');?>">
-        <!-- AdminLTE Skins. Choose a skin from the css/skins
-             folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="<?php echo site_url('resources/css/_all-skins.min.css');?>">
-
         <link rel="stylesheet" type="text/css" href="<?php echo site_url('resources/cp/dist/bootstrap-clockpicker.min.css');?>">
-        
+        <link rel="stylesheet" type="text/css" href="<?=site_url('resources/ext/DataTables/datatables.min.css');?>"/>
+        <!-- js -->
         <script type="text/javascript" src="<?php echo site_url('resources/js/jquery-2.2.3.min.js');?>"></script>
-        
         <script type="text/javascript" src="<?php echo site_url('resources/cp/assets/js/jquery.min.js');?>"></script>
         <script type="text/javascript" src="<?php echo site_url('resources/cp/assets/js/bootstrap.min.js');?>"></script>
-
         <script type="text/javascript" src="<?php echo site_url('resources/cp/dist/bootstrap-clockpicker.min.js');?>"></script>
-       
+        <script type="text/javascript" src="<?=site_url('resources/ext/DataTables/datatables.min.js');?>"></script>
     </head>
     
     <body class="hold-transition skin-blue sidebar-mini">
@@ -152,5 +143,11 @@
         <script src="<?php echo site_url('resources/js/moment.js');?>"></script>
         <script src="<?php echo site_url('resources/js/bootstrap-datetimepicker.min.js');?>"></script>
         <script src="<?php echo site_url('resources/js/global.js');?>"></script>
+        <script type="text/javascript" src="<?=site_url('resources/ext/DataTables/datatables.min.js');?>"></script>
+        <script>
+            $(document).ready(function() {
+                $('.dataTable').DataTable();
+            } );
+        </script>
     </body>
 </html>

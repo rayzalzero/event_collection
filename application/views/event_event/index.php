@@ -28,8 +28,8 @@
                 </div>
             </div>
             <div class="box-body">
-                <table class="table table-striped">
-                    <tr>
+                <table class="table table-striped dataTable">
+                <thead><tr>
 						<th>Name Event</th>
 						<th>Lokasi</th>
 						<th>Pembicara</th>
@@ -37,8 +37,9 @@
 						<th>Jumlah Tiket</th>
 						<th>Deskripsi Acara</th>
 						<th>Actions</th>
-                    </tr>
+                </thead></tr>
                     <?php foreach($event_event as $e){ ?>
+                <tbody>
                     <tr>
 						<td><?php echo $e['name_event']; ?></td>
 						<td><?php echo $e['lokasi']; ?></td>
@@ -75,6 +76,7 @@
                         </td>
                     </tr>
                     <?php } ?>
+                </tbody>
                 </table>        
             </div>
         </div>

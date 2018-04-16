@@ -9,6 +9,7 @@ class Event_event extends CI_Controller{
         $this->load->library('upload');
         $this->load->helper(array('form', 'url'));
         $this->load->helper('file');
+        $this->load->library('encryption');
         if (!$this->session->userdata['logged_in']) {
             redirect('/');
         }
@@ -103,6 +104,8 @@ class Event_event extends CI_Controller{
      */
     public function edit_event_com($id) {
         $data = $this->Event_event_model->get_event_event($id);
+        $data->id_event = $this->encoder->encrypt($data->id_event);
+        $data->id_user = $this->encoder->encrypt($data->id_user);
         echo json_encode($data);
     }
 

@@ -42,7 +42,7 @@ class User_Authentication extends CI_Controller
     {
         $this->load->view('registration_form');
     }
-$arrayName = array('' => , );
+// $arrayName = array('' => , );
 // Validate and store registration data in database
     public function new_user_registration()
     {
@@ -73,7 +73,6 @@ $arrayName = array('' => , );
 // Check for user login process
     public function user_login_process()
     {
-
         $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
 
@@ -94,7 +93,6 @@ $arrayName = array('' => , );
             if ($result == true) {
                 $username = $this->input->post('username');
                 $result = $this->login_database->read_user_information($username);
-                //vsprintf($this->login_database->read_user_information($username));
                 if ($result != false) {
                     $session_data = array(
                     'username' => $result[0]->username,
@@ -117,24 +115,34 @@ $arrayName = array('' => , );
                     }
                 }
             } else {
-                $data = array(
-                'error_message' => 'Invalid Username or Password'
-                );
+                $data = array('error_message' => 'Invalid Username or Password');
                 $this->load->view('home/login', $data);
             }
         }
     }
 
-// Logout from admin page
+    // Logout from admin page
     public function logout()
     {
         // Removing session data
-        $sess_array = array(
-        'username' => ''
-        );
+        $sess_array = array('username' => '');
         $this->session->unset_userdata('logged_in', $sess_array);
         $data['message_display'] = 'Successfully Logout';
         $this->load->view('/home/login', $data);
-        //redirect('/');
+    }
+
+    // remember me
+    function setSession($username,$password,$cookie=null){
+        // Other code for login ($_POST[]....)
+        // $row is result of your sql query
+        $values = array($username,$this->obscure($password),$row['id']);         
+        $session = implode(",",$values);
+    
+        // check if cookie is enable for login
+        if($cookie=='on'){
+            setcookie("your_cookie_name", $session, time()+60*60*24*100,'/');
+        } else {
+            $_SESSION["your_session_name"] = $session;
+        }
     }
 }

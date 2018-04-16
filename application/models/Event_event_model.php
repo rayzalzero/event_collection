@@ -16,7 +16,7 @@ class Event_event_model extends CI_Model
      */
     function get_event_event($id_event)
     {
-        return $this->db->get_where('event_event',array('id_event'=>$id_event))->row_array();
+        return $this->db->get_where('event_event',array('id_event'=>$id_event))->row();
     }
         
     /*
