@@ -28,17 +28,21 @@
                 </div>
             </div>
             <div class="box-body">
-                <table class="table table-striped">
-                    <tr>
-						<th>Name Event</th>
-						<th>Lokasi</th>
-						<th>Pembicara</th>
-						<th>Tanggal Mulai</th>
-						<th>Jumlah Tiket</th>
-						<th>Deskripsi Acara</th>
-						<th>Actions</th>
-                    </tr>
-                    <?php foreach($event_event as $e){ ?>
+                <table id="data-table-row-grouping" class="display" cellspacing="0" width="100%">
+                      <thead>
+                          <tr>
+                            <th>Name Event</th>
+                            <th>Lokasi</th>
+                            <th>Pembicara</th>
+                            <th>Tanggal Mulai</th>
+                            <th>Jumlah Tiket</th>
+                            <th>Deskripsi Acara</th>
+                            <th>Actions</th>
+                          </tr>
+                      </thead>
+                   
+                      <tbody>
+                      <?php foreach($event_event as $e){ ?>
                     <tr>
 						<td><?php echo $e['name_event']; ?></td>
 						<td><?php echo $e['lokasi']; ?></td>
@@ -75,7 +79,8 @@
                         </td>
                     </tr>
                     <?php } ?>
-                </table>        
+                      </tbody>
+                  </table>     
             </div>
         </div>
     </div>
@@ -222,6 +227,27 @@
   </div>
 </div>
 
+ <!-- ================================================
+    Scripts
+    ================================================ -->
+    
+    <!-- jQuery Library -->
+    <script type="text/javascript" src="<?= site_url('assets/admin/js/jquery-1.11.2.min.js');?>"></script>    
+    <!--materialize js-->
+    <script type="text/javascript" src="<?= site_url('assets/admin/js/materialize.js');?>"></script>
+    <!--prism-->
+    <script type="text/javascript" src="<?= site_url('assets/admin/js/prism.js');?>"></script>
+    <!--scrollbar-->
+    <script type="text/javascript" src="<?= site_url('assets/admin/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js');?>"></script>
+    <!-- data-tables -->
+    <script type="text/javascript" src="<?= site_url('assets/admin/js/plugins/data-tables/js/jquery.dataTables.min.js');?>"></script>
+    <script type="text/javascript" src="<?= site_url('assets/admin/js/plugins/data-tables/data-tables-script.js');?>"></script>
+    <!-- chartist -->
+    <script type="text/javascript" src="<?= site_url('assets/admin/js/plugins/chartist-js/chartist.min.js');?>"></script>   
+    
+    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+    <script type="text/javascript" src="<?= site_url('assets/admin/js/plugins.js');?>"></script> 
+    
 <script type="text/javascript">
     function update_event(id) {
         $('#form_event')[0].reset();
@@ -297,15 +323,15 @@
         });
     } 
 
-    var mulai_jam = $('#jam_mulai');
-    mulai_jam.clockpicker({
-        autoclose: true
-    });
+    // var mulai_jam = $('#jam_mulai');
+    // mulai_jam.clockpicker({
+    //     autoclose: true
+    // });
 
-    var selesai_jam = $('#jam_selesai');
-    selesai_jam.clockpicker({
-        autoclose: true
-    });
+    // var selesai_jam = $('#jam_selesai');
+    // selesai_jam.clockpicker({
+    //     autoclose: true
+    // });
 
 </script>
 
