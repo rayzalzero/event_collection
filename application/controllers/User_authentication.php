@@ -37,16 +37,14 @@ class User_Authentication extends CI_Controller
     {
         $this->load->view('/home/login');
     }
-// Show registration page
+    // Show registration page
     public function user_registration_show()
     {
         $this->load->view('registration_form');
     }
-$arrayName = array('' => , );
-// Validate and store registration data in database
+    // Validate and store registration data in database
     public function new_user_registration()
     {
-
         // Check validation for user input in SignUp form
         $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
         $this->form_validation->set_rules('email_value', 'Email', 'trim|required|xss_clean');
@@ -70,7 +68,7 @@ $arrayName = array('' => , );
         }
     }
 
-// Check for user login process
+    // Check for user login process
     public function user_login_process()
     {
 
