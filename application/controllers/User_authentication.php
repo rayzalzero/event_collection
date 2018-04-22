@@ -97,7 +97,7 @@ class User_Authentication extends CI_Controller
                     $session_data = array(
                     'username' => $result[0]->username,
                     'email' => $result[0]->name,
-                    'id_user' => $result[0]->id_user,
+                    'id_user' => $this->encoder->encrypt($result[0]->id_user),
                     'level' => $result[0]->level,
                     );
                     // Add user data in session

@@ -28,7 +28,6 @@ class Event_user extends CI_Controller{
      */
     function add()
     {   
-        
         $this->load->library('form_validation');
 
 		$this->form_validation->set_rules('password','Password','required');
@@ -43,20 +42,12 @@ class Event_user extends CI_Controller{
             $params = array(
                 'level' => $this->input->post('level'),
                 'password'  => md5($this->input->post('password')),
-				//'password' => $this->input->post('password'),
-                //'password' => $this->encryption->encrypt($this->input->post('password')),
                 'username' => $this->input->post('username'),
 				'name' => $this->input->post('name'),
 				'instansi' => $this->input->post('instansi'),
                 'email' => $this->input->post('email'),
-                'create_at' => $waktusekarang,
-				//'updated_at' => $this->input->post('updated_at'),
+                'create_at' => $waktusekarang
             );
-            //$plain_text = $this->input->post('password');
-            //$ciphertext = $this->encryption->encrypt($this->input->post('password'));
-            //print_r($ciphertext);
-            // Outputs: This is a plain-text message!
-            //echo $this->encryption->decrypt($ciphertext);
             $event_user_id = $this->Event_user_model->add_event_user($params);
             redirect('event_user/index');
         }

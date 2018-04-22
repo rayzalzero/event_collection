@@ -2,9 +2,9 @@
     <div class="col-md-12">
       	<div class="box box-info">
             <div class="box-header with-border">
-              	<h3 class="box-title">Event User Add</h3>
+              	<h3 class="box-title">Tambah Pengguna</h3>
             </div>
-            <?php echo form_open('event_user/add'); ?>
+            <?= form_open('event_user/add'); ?>
           	<div class="box-body">
           		<div class="row clearfix">
 					<div class="col-md-6">
@@ -27,41 +27,41 @@
 								} 
 								?>
 							</select>
-							<span class="text-danger"><?php echo form_error('level');?></span>
+							<span class="text-danger"><?= form_error('level');?></span>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="password" class="control-label"><span class="text-danger">*</span>Password</label>
 						<div class="form-group">
-							<input type="password" name="password" value="<?php echo $this->input->post('password'); ?>" class="form-control" id="password" />
-							<span class="text-danger"><?php echo form_error('password');?></span>
+							<input type="password" name="password" value="<?= $this->input->post('password'); ?>" class="form-control" id="password" />
+							<span class="text-danger"><?= form_error('password');?></span>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="username" class="control-label"><span class="text-danger">*</span>Username</label>
 						<div class="form-group">
-							<input type="text" name="username" value="<?php echo $this->input->post('username'); ?>" class="form-control" id="username" />
-							<span class="text-danger"><?php echo form_error('username');?></span>
+							<input type="text" name="username" value="<?= $this->input->post('username'); ?>" class="form-control" id="username" />
+							<span class="text-danger"><?= form_error('username');?></span>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="name" class="control-label"><span class="text-danger">*</span>Name</label>
 						<div class="form-group">
 							<input type="text" name="name" value="<?php echo $this->input->post('name'); ?>" class="form-control" id="name" />
-							<span class="text-danger"><?php echo form_error('name');?></span>
+							<span class="text-danger"><?= form_error('name');?></span>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="instansi" class="control-label">Instansi</label>
 						<div class="form-group">
-							<input type="text" name="instansi" value="<?php echo $this->input->post('instansi'); ?>" class="form-control" id="instansi" />
+							<input type="text" name="instansi" value="<?= $this->input->post('instansi'); ?>" class="form-control" id="instansi" />
 						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="email" class="control-label">Email</label>
 						<div class="form-group">
-							<input type="text" name="email" value="<?php echo $this->input->post('email'); ?>" class="form-control" id="email" />
-							<span class="text-danger"><?php echo form_error('email');?></span>
+							<input type="text" name="email" value="<?= $this->input->post('email'); ?>" class="form-control" id="email" />
+							<span class="text-danger"><?= form_error('email');?></span>
 						</div>
 					</div>
 				</div>
@@ -71,7 +71,7 @@
             		<i class="fa fa-check"></i> Save
             	</button>
           	</div>
-            <?php echo form_close(); ?>
+            <?= form_close(); ?>
       	</div>
     </div>
 </div>
