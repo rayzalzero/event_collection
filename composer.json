@@ -14,7 +14,8 @@
 		"php": ">=5.2.4",
 		"hashids/hashids": "^2.0",
 		"mpdf/mpdf": "^6.1",
-		"phpoffice/phpspreadsheet": "^1.1"
+		"phpoffice/phpspreadsheet": "^1.1",
+		"picqer/php-barcode-generator": "^0.2.2"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"

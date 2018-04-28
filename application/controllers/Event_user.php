@@ -5,6 +5,7 @@ class Event_user extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('Event_user_model');
+        $this->load->library('form_validation');
         $this->load->library('encryption');
         $this->load->library('session');
         if (!$this->session->userdata['logged_in']) {
@@ -63,12 +64,8 @@ class Event_user extends CI_Controller{
      */
     function edit($id_user)
     {   
-        $this->load->library('form_validation');
-        // check if the event_user exists before trying to edit it
         $data['event_user'] = $this->Event_user_model->get_event_user($id_user);
         $data['event_user']['password'] = $this->encryption->decrypt($data['event_user']['password']);
-        //$data['event_user']['password'] = md5($data['event_user']['password']);
-        //print_r($data['event_user']['password']);
         if(isset($data['event_user']['id_user']))
         {
             $this->load->library('form_validation');

@@ -40,22 +40,31 @@ class User_Authentication extends CI_Controller
     // Show registration page
     public function user_registration_show()
     {
-        $this->load->view('registration_form');
+        $this->load->view('/home/registration_form');
     }
     // Validate and store registration data in database
     public function new_user_registration()
     {
+        $post = $this->input->post();
+        // print_r($post);
+        // exit;
         // Check validation for user input in SignUp form
-        $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('email_value', 'Email', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
-        if ($this->form_validation->run() == false) {
-            $this->load->view('registration_form');
+        // $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
+        // $this->form_validation->set_rules('email_value', 'Email', 'trim|required|xss_clean');
+        // $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
+        if (empty($post)) {
+            $data['message_display'] = 'Registration Successfully !';
+            $this->load->view('/home/registration_form');
         } else {
           $data = array(
-            'user_name' => $this->input->post('username'),
-            'user_email' => $this->input->post('email_value'),
-            'user_password' => $this->input->post('password')
+            'username' => $this->input->post('username'),
+            'email' => $this->input->post('email'),
+            'name' => $this->input->post('nama'),
+            'level' => 2,
+            'address' => $this->input->post('alamat'),
+            'jenis_kelamin' => $this->input->post('jk'),
+            'instansi' => $this->input->post('instansi'),
+            'password' => md5($this->input->post('password'))
           );
             $result = $this->login_database->registration_insert($data);
             if ($result == true) {

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Event Akakom</title>
+        <title>Kegiatan Akakom</title>
 
         <!-- Favicons -->
         <link rel="apple-touch-icon" sizes="57x57" href="<?= site_url('assets/users/favicons/apple-icon-57x57.png');?>">
@@ -152,12 +152,10 @@
                 </div>
             </aside>
             <!-- /.control-sidebar -->
-            <!-- Add the sidebar's background. This div must be placed
-            immediately after the control sidebar -->
+            <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
             <div class="control-sidebar-bg"></div>
         </div>
         <!-- ./wrapper -->
-
         
     </body>   
     <!-- jQuery 2.2.3 -->

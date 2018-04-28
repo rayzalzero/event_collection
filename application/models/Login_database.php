@@ -8,15 +8,15 @@ class Login_Database extends CI_Model
     {
 
         // Query to check whether username already exist or not
-        $condition = "user_name =" . "'" . $data['user_name'] . "'";
+        $condition = "username =" . "'" . $data['username'] . "'";
         $this->db->select('*');
-        $this->db->from('user_login');
+        $this->db->from('event_users');
         $this->db->where($condition);
         $this->db->limit(1);
         $query = $this->db->get();
         if ($query->num_rows() == 0) {
             // Query to insert data in database
-            $this->db->insert('user_login', $data);
+            $this->db->insert('event_users', $data);
             if ($this->db->affected_rows() > 0) {
                 return true;
             }

@@ -21,8 +21,7 @@
                 </div>
                 <div>
                     <input type="submit" value="Log in" />
-                    <a href="#">Lost your password?</a>
-                    <a href="#">Register</a>
+                    <a href="<?= base_url('user_authentication/user_registration_show')?>">Register</a>
                 </div>
                 <?= form_close(); ?>
             </section>
