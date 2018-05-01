@@ -41,7 +41,7 @@
                                     <th>Tanggal Mulai</th>
                                     <th>Jumlah Tiket</th>
                                     <th>Deskripsi Acara</th>
-                                    <th>Actions</th>
+                                    <th class="action">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>

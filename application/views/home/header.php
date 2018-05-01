@@ -38,6 +38,8 @@
     <script src="<?= site_url('assets/users/js/jquery.prettyPhoto.js');?>"></script>
     <script src="<?= site_url('assets/users/js/jquery.flexslider.js');?>"></script>
     <script src="<?= site_url('assets/users/js/jquery.custom.js');?>"></script>
+    <script src="<?= site_url('assets/plugins/bootstrap-notify-3.1.3/bootstrap-notify.min.js');?>"></script>
+    
     <script type="text/javascript">
         $(document).ready(function() {
             $("#btn-blog-next").click(function() {
@@ -76,17 +78,9 @@
       <div class="span7 navigation">
           <div class="navbar hidden-phone">
           <ul class="nav">
+         <li><a href="<?= site_url('/');?>">Home</a></li>
           <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="index.htm">Home <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                  <li><a href="index.htm">Full Page</a></li>
-                  <li><a href="index-gallery.htm">Gallery Only</a></li>
-                  <li><a href="index-slider.htm">Slider Only</a></li>
-              </ul>
-          </li>
-         <li><a href="features.htm">Features</a></li>
-          <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="page-full-width.htm">Pages <b class="caret"></b></a>
+              <a class="dropdown-toggle" data-toggle="dropdown" href="page-full-width.htm">UKM <b class="caret"></b></a>
               <ul class="dropdown-menu">
                   <li><a href="page-full-width.htm">Full Width</a></li>
                   <li><a href="page-right-sidebar.htm">Right Sidebar</a></li>
@@ -94,27 +88,7 @@
                   <li><a href="page-double-sidebar.htm">Double Sidebar</a></li>
               </ul>
           </li>
-           <li class="dropdown active">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="gallery-4col.htm">Gallery <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                  <li><a href="gallery-3col.htm">Gallery 3 Column</a></li>
-                  <li><a href="gallery-4col.htm">Gallery 4 Column</a></li>
-                  <li><a href="gallery-6col.htm">Gallery 6 Column</a></li>
-                  <li><a href="gallery-4col-circle.htm">Gallery 4 Round</a></li>
-                  <li><a href="gallery-single.htm">Gallery Single</a></li>
-              </ul>
-           </li>
-           <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="blog-style1.htm">Blog <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                  <li><a href="blog-style1.htm">Blog Style 1</a></li>
-                  <li><a href="blog-style2.htm">Blog Style 2</a></li>
-                  <li><a href="blog-style3.htm">Blog Style 3</a></li>
-                  <li><a href="blog-style4.htm">Blog Style 4</a></li>
-                  <li><a href="blog-single.htm">Blog Single</a></li>
-              </ul>
-           </li>
-           <li><a href="page-contact.htm">Contact</a></li>
+           <li><a href="<?= site_url('home/event_list');?>">Daftar Tiket</a></li>
                 <ul class="nav">                        
                     <?php if (!isset($this->session->userdata['logged_in'])) { ?>
                         <li><a href="<?= site_url('user_authentication/login');?>">Login</a></li>
@@ -132,29 +106,21 @@
               <div class="mobile-nav-select">
               <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
                   <option value="">Navigate...</option>
-                  <option value="index.htm">Home</option>
-                      <option value="index.htm">- Full Page</option>
-                      <option value="index-gallery.htm">- Gallery Only</option>
-                      <option value="index-slider.htm">- Slider Only</option>
-                  <option value="features.htm">Features</option>
-                  <option value="page-full-width.htm">Pages</option>
+                  <option value="<?= site_url('/');?>">Home</option>
+                  <option value="page-full-width.htm">UKM</option>
                       <option value="page-full-width.htm">- Full Width</option>
                       <option value="page-right-sidebar.htm">- Right Sidebar</option>
                       <option value="page-left-sidebar.htm">- Left Sidebar</option>
                       <option value="page-double-sidebar.htm">- Double Sidebar</option>
-                  <option value="gallery-4col.htm">Gallery</option>
-                      <option value="gallery-3col.htm">- 3 Column</option>
-                      <option value="gallery-4col.htm">- 4 Column</option>
-                      <option value="gallery-6col.htm">- 6 Column</option>
-                      <option value="gallery-4col-circle.htm">- Gallery 4 Col Round</option>
-                      <option value="gallery-single.htm">- Gallery Single</option>
-                  <option value="blog-style1.htm">Blog</option>
-                      <option value="blog-style1.htm">- Blog Style 1</option>
-                      <option value="blog-style2.htm">- Blog Style 2</option>
-                      <option value="blog-style3.htm">- Blog Style 3</option>
-                      <option value="blog-style4.htm">- Blog Style 4</option>
-                      <option value="blog-single.htm">- Blog Single</option>
-                  <option value="page-contact.htm">Contact</option>
+                <?php if (!isset($this->session->userdata['logged_in'])) { ?>
+                  <option value="<?= site_url('user_authentication/login');?>">Login</option>
+                <?php } elseif ($this->session->userdata['logged_in']['level'] == 2) { ?>
+                    <option value="<?= site_url('user_authentication/logout');?>">Logout <?= $this->session->userdata['logged_in']['username'] ?></option>
+                <?php } elseif ($this->session->userdata['logged_in']['level'] == 1) { ?>
+                    <option value="<?= site_url('user_authentication/logout');?>"><span class="badge badge-warning">Mode Creator</span> Logout <?= $this->session->userdata['logged_in']['username'] ?></option>
+                <?php } else { ?>
+                    <option value="<?= site_url('user_authentication/logout');?>"><span class="badge badge-warning">Mode Admin</span> Logout <?= $this->session->userdata['logged_in']['username'] ?></option>
+                <?php } ?>
               </select>
               </div>
               </form>

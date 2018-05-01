@@ -105,7 +105,7 @@ class User_Authentication extends CI_Controller
                 if ($result != false) {
                     $session_data = array(
                     'username' => $result[0]->username,
-                    'email' => $result[0]->name,
+                    'email' => $result[0]->email,
                     'id_user' => $this->encoder->encrypt($result[0]->id_user),
                     'level' => $result[0]->level,
                     );
@@ -132,16 +132,13 @@ class User_Authentication extends CI_Controller
         }
     }
 
-// Logout from admin page
+    // Logout from admin page
     public function logout()
     {
         // Removing session data
-        $sess_array = array(
-        'username' => ''
-        );
+        $sess_array = array('username' => '');
         $this->session->unset_userdata('logged_in', $sess_array);
         $data['message_display'] = 'Successfully Logout';
         $this->load->view('/home/login', $data);
-        //redirect('/');
     }
 }

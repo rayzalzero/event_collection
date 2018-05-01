@@ -28,7 +28,7 @@ Highcharts.chart('container', {
         text: 'Acara Akakom'
     },
     subtitle: {
-        text: 'Source: <a href="#">Wikipedia.org</a>'
+        text: ''
     },
     xAxis: {
         categories: ['Acara Akakom'],
@@ -39,7 +39,7 @@ Highcharts.chart('container', {
     yAxis: {
         min: 0,
         title: {
-            text: 'Population (millions)',
+            text: 'Population (Persons)',
             align: 'high'
         },
         labels: {
@@ -47,7 +47,7 @@ Highcharts.chart('container', {
         }
     },
     tooltip: {
-        valueSuffix: ' millions'
+        valueSuffix: ' Persons'
     },
     plotOptions: {
         bar: {

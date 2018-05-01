@@ -40,15 +40,15 @@
         <link rel="stylesheet" href="<?= site_url('resources/css/_all-skins.min.css');?>">
         <!-- picker css -->
         <link rel="stylesheet" type="text/css" href="<?= site_url('assets/plugins/clockpicker/dist/bootstrap-clockpicker.min.css');?>">
-        <link rel="stylesheet" type="text/css" href="<?= site_url('assets/plugins/datatables/datatables.css');?>">
-    
+        <!-- datatable -->
+        <link rel="stylesheet" type="text/css" href="<?= site_url('assets/users/plugins/datatable/datatables.css')?>"/>
+        
         <!-- javascript -->
         <script src="<?= site_url('resources/js/jquery-2.2.3.min.js');?>"></script><script type="text/javascript" src="<?= site_url('resources/js/moment.js');?>"></script>
         <script type="text/javascript" src="<?= site_url('assets/plugins/clockpicker/dist/bootstrap-clockpicker.min.js');?>"></script>
         <script type="text/javascript" src="<?= site_url('resources/js/bootstrap-datetimepicker.min.js');?>"></script>
         <script type="text/javascript" src="<?= site_url('resources/js/global.js');?>"></script>
-        <script type="text/javascript" src="<?= site_url('assets/plugins/datatables/datatables.js');?>"></script>
-    
+
     </head>
     
     <body class="hold-transition skin-blue sidebar-mini">
@@ -168,16 +168,45 @@
     <script src="<?= site_url('resources/js/app.min.js');?>"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="<?= site_url('resources/js/demo.js');?>"></script>
-    
+
     <!-- DatePicker -->
     <script type="text/javascript" src="<?= site_url('resources/js/moment.js');?>"></script>
     <script type="text/javascript" src="<?= site_url('assets/plugins/clockpicker/dist/bootstrap-clockpicker.min.js');?>"></script>
     <script type="text/javascript" src="<?= site_url('resources/js/bootstrap-datetimepicker.min.js');?>"></script>
     <script type="text/javascript" src="<?= site_url('resources/js/global.js');?>"></script>
-    <script type="text/javascript" src="<?= site_url('assets/plugins/datatables/datatables.js');?>"></script>
+
+    <script type="text/javascript" src="<?= site_url('assets/users/plugins/datatable/pdfmake-0.1.32/pdfmake.min.js')?>"></script>
+    <script type="text/javascript" src="<?= site_url('assets/users/plugins/datatable/pdfmake-0.1.32/vfs_fonts.js')?>"></script>
+    <script type="text/javascript" src="<?= site_url('assets/users/plugins/datatable/datatables.min.js')?>"></script>
     <script>
-    $(document).ready(function () {
-        $('.dataTable').DataTable();
+    $(document).ready(function() {
+        $('.dataTable').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend:    'excelHtml5',
+                    text:      '<i class="icon-file-excel"></i> Excel',
+                    filename:  'Laporan ' + moment().format('YYYY-MM-DD HHmmss'),
+                    exportOptions: {
+                        columns: ':visible:not(.action)',
+                        row:':visible',
+                        format: {
+                            body: function(data, row, col,node) {
+                                var elementType = node.firstChild;
+                                if (elementType != null) {
+                                    if (elementType.nodeName == "SELECT") {
+                                        return  $(elementType).find(':selected').text();
+                                    } else return data;
+                                }
+                                else return data;
+                            }
+                        }
+                    },
+                    // className: 'btn bg-slate-700',
+                    titleAttr: 'Excel'
+                }
+            ]
+        });
     });
     </script>
 </html>

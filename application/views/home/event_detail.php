@@ -24,7 +24,11 @@
                         <li><h6>Waktu Selesai:</h6><?= $detail['jam_selesai'];?></li>
                         <li><h6>Jumlah Tiket:</h6><?= $detail['sisa_tiket'];?> / <?=($detail['jumlah_tiket']);?></li>
                     </ul>
-                    <?php if ($detail['sisa_tiket'] !== 0) { ?>
+                    <?php if (empty($this->session->userdata['logged_in']['id_user'])) { ?>
+                        <a href="<?= site_url('user_authentication/login')?>" >
+                            <button type="button" class="btn btn-info btn-lg login">Login</button>
+                        </a>
+                    <?php }elseif ($detail['sisa_tiket'] !== 0) { ?>
                         <button type="button" class="btn btn-info btn-lg daftar" data-toggle="modal" data-target="#daftar">Daftar</button>                                            
                     <?php } else {?>
                         <span class="badge badge-warning">Tiket Penuh</span>
@@ -41,20 +45,33 @@
                 <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header <?= $detail['id_event'];?></h4>
+                    <h4 class="modal-title">Pendaftaran Acara <?=($detail['name_event']);?></h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                    <label class="control-label" for="email">Name:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="name" placeholder="Nama anda" name="name">
-                    </div>
+                    <input type="checkbox" class="default" checked> Daftar Sesuai Data Anda<br>
+                        <label class="control-label" for="email">Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control daftar-form" id="name" placeholder="Nama anda" name="name">
+                        </div>
                     </div>
                     <div class="form-group">
-                    <label class="control-label" for="pwd">Address:</label>
-                    <div class="col-sm-10">          
-                        <input type="text" class="form-control" id="address" placeholder="Alamat anda" name="address">
+                        <label class="control-label">Address:</label>
+                        <div class="col-sm-10">     
+                            <textarea class="form-control daftar-form" rows="5" id="address"placeholder="Alamat anda" name="address"></textarea>     
+                        </div>
                     </div>
+                    <div class="form-group">
+                        <label class="control-label">Instansi:</label>
+                        <div class="col-sm-10">          
+                            <input type="text" class="form-control daftar-form" id="instansi" placeholder="Instansi anda" name="instansi">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Email:</label>
+                        <div class="col-sm-10">          
+                            <input type="email" class="form-control daftar-form" id="email" placeholder="Email anda" name="email">
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -69,18 +86,47 @@
 </body>
 <?php include_once('footer.php')?>
 <script>
-   
-    $('.daftar').click(function () { 
-        console.log('daftar');
+    var dataUser;
+    $('.daftar').click(function (e) { 
+        e.preventDefault();
+        var user_id = '<?= !empty($this->session->userdata['logged_in']['id_user']) ? $this->session->userdata['logged_in']['id_user'] : 0?>';
+        var url = '<?= site_url('home/get_json_data/user/')?>';
+        $.ajax({
+            type: "GET",
+            url: url + user_id,
+            success: function (response) {
+                dataUser = response;
+                $('#name').val(dataUser.name);
+                $('#email').val(dataUser.email);
+                $('#instansi').val(dataUser.instansi);
+                $('#alamat').val(dataUser.address);
+            }
+        });
     });
-
+    $('.default').change(function (e) { 
+        e.preventDefault();
+        if ($('input.default').is(':checked')) {
+            setUserDefault();
+        }else{
+            console.log('a');
+            $('.daftar-form').val('');
+        }
+    });
+    function setUserDefault() {
+        $('#name').val(dataUser.name);
+        $('#email').val(dataUser.email);
+        $('#instansi').val(dataUser.instansi);
+        $('#alamat').val(dataUser.address);
+    }
+    
     $('.submit-registration').click(function () { 
         var url= '<?= base_url('/home/registration_event/'.$detail['id_event'])?>';
         $.ajax({
             type: "post",
             url: url,
             success: function (response) {
-                alert(response);
+                $.notify(response);
+                $('#daftar').modal('hide');
             }
         });
     });
