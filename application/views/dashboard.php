@@ -8,7 +8,7 @@
                 <script src="<?= base_url('assets/plugins/Highcharts-6.1.0/code/modules/data.js')?>"></script>
 
                 <div id="container" style="min-width: 310px; margin: 0 auto"></div>
-            </div>
+           </div>
         </div>
     </div>
 </div>
