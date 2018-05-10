@@ -9,6 +9,7 @@ class Event_event_model extends CI_Model
     function __construct()
     {
         parent::__construct();
+        $this->load->library('encryption');
     }
     
     /*
@@ -24,19 +25,24 @@ class Event_event_model extends CI_Model
      */
     function get_all_event_event()
     {
-        $this->db->select('id_event, name_event, lokasi, pembicara, tanggal_mulai, jumlah_tiket, deskripsi_acara');
+        $this->db->select('id_event, name_event, lokasi, pembicara, tanggal_mulai, jumlah_tiket, deskripsi_acara, status');
         $this->db->order_by('id_event', 'desc');
         return $this->db->get('event_event')->result_array();
     }
     /*
      * Get all event_event_by_creator
      */
-    function get_all_event_event_by_creator($id_user)
+    function get_all_event_event_by_creator()
     {
-        $this->db->select('id_event, name_event, lokasi, pembicara, tanggal_mulai, jumlah_tiket, deskripsi_acara');
+        $id_user = $this->encoder->decrypt($this->session->userdata['logged_in']['id_user']);
+
+        $this->db->select('id_event, name_event, lokasi, pembicara, tanggal_mulai, jumlah_tiket, deskripsi_acara, status');
         $this->db->where('id_user',$id_user);
+        // $this->db->where('status', '1');        
         $this->db->order_by('id_event', 'desc');
-        return $this->db->get('event_event')->result_array();
+        $result = $this->db->get('event_event')->result_array();
+        
+        return $result;
     }
         
     /*

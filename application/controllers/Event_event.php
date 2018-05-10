@@ -45,7 +45,7 @@ class Event_event extends CI_Controller{
         $namafile = array('upload_data' => $this->upload->data());
         
         $params = array(
-            'id_user'           => $this->input->post('id_user'),
+            'id_user'           => $this->encoder->decrypt($this->input->post('id_user')),
             'name_event'        => $this->input->post('name_event'),
             'lokasi'            => $this->input->post('lokasi'),
             'pembicara'         => $this->input->post('pembicara'),
@@ -55,12 +55,13 @@ class Event_event extends CI_Controller{
             'jam_selesai'       => $this->input->post('jam_selesai'),
             'jumlah_tiket'      => $this->input->post('jumlah_tiket'),
             'poster'            => $namafile['upload_data']['file_name'],
+            'status'            => 0,
             'create_at'         => date('Y-m-d H:i:s'),
             'deskripsi_acara'   => $this->input->post('deskripsi_acara'),
         );
 
         $paramsupdate = array(
-            'id_user'           => $this->input->post('id_user'),
+            'id_user'           => $this->encoder->decrypt($this->input->post('id_user')),
             'name_event'        => $this->input->post('name_event'),
             'lokasi'            => $this->input->post('lokasi'),
             'pembicara'         => $this->input->post('pembicara'),
@@ -70,6 +71,7 @@ class Event_event extends CI_Controller{
             'jam_selesai'       => $this->input->post('jam_selesai'),
             'jumlah_tiket'      => $this->input->post('jumlah_tiket'),
             'poster'            => $namafile['upload_data']['file_name'],
+            'status'            => $this->input->post('status'),
             'update_at'         => date('Y-m-d H:i:s'),
             'deskripsi_acara'   => $this->input->post('deskripsi_acara'),
         );

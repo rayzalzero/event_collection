@@ -88,7 +88,9 @@
                   <li><a href="page-double-sidebar.htm">Double Sidebar</a></li>
               </ul>
           </li>
-           <li><a href="<?= site_url('home/event_list');?>">Daftar Tiket</a></li>
+          <?php if (!empty($this->session->userdata['logged_in'])) { ?>
+            <li><a href="<?= site_url('home/event_list');?>">Daftar Tiket</a></li>
+          <?php }?>
                 <ul class="nav">                        
                     <?php if (!isset($this->session->userdata['logged_in'])) { ?>
                         <li><a href="<?= site_url('user_authentication/login');?>">Login</a></li>

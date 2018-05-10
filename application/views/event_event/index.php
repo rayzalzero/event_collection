@@ -40,7 +40,7 @@
                                     <th>Pembicara</th>
                                     <th>Tanggal Mulai</th>
                                     <th>Jumlah Tiket</th>
-                                    <th>Deskripsi Acara</th>
+                                    <th>Status</th>
                                     <th class="action">Actions</th>
                                 </tr>
                             </thead>
@@ -63,7 +63,7 @@
                                         <?= $e['jumlah_tiket']; ?>
                                     </td>
                                     <td>
-                                        <?= $e['deskripsi_acara']; ?>
+                                        <?= $e['status'] == 1 ? '<span class="badge badge-success">Aktif</span>' : '<span class="badge badge-warning">Non Aktif</span>'; ?>
                                     </td>
                                     <td>
                                         <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#tambah_event" onclick="update_event(<?= $e['id_event'];?>)">
@@ -103,70 +103,82 @@
                             />
                             <input type="hidden" name="id_event" class="form-control" id="id_event" />
                             <div class="col-md-6">
-                                <label for="name_event" class="control-label">
+                                <label class="control-label">
                                     <span class="text-danger">*</span>Name Event</label>
                                 <div class="form-group">
                                     <input type="text" name="name_event" class="form-control" id="name_event" required/>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="lokasi" class="control-label">
+                                <label class="control-label">
                                     <span class="text-danger">*</span>Lokasi</label>
                                 <div class="form-group">
                                     <input type="text" name="lokasi" class="form-control" id="lokasi" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="pembicara" class="control-label">
+                                <label class="control-label">
                                     <span class="text-danger">*</span>Pembicara</label>
                                 <div class="form-group">
                                     <input type="text" name="pembicara" class="form-control" id="pembicara" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="tanggal_mulai" class="control-label">
+                                <label class="control-label">
                                     <span class="text-danger">*</span>Tanggal Mulai</label>
                                 <div class="form-group">
                                     <input type="text" name="tanggal_mulai" class="has-datepicker form-control" id="tanggal_mulai" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="durasi_hari" class="control-label">
+                                <label class="control-label">
                                     <span class="text-danger">*</span>Durasi Hari</label>
                                 <div class="form-group">
                                     <input type="text" name="durasi_hari" class="form-control" id="durasi_hari" required />
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <label for="jam_mulai" class="control-label">
+                                <label class="control-label">
                                     <span class="text-danger">*</span>Jam Mulai</label>
                                 <div class="form-group">
                                     <input type="text" name="jam_mulai" class="form-control" readonly id="jam_mulai" required />
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <label for="jam_selesai" class="control-label">
+                                <label class="control-label">
                                     <span class="text-danger">*</span>Jam Selesai</label>
                                 <div class="form-group">
                                     <input type="text" name="jam_selesai" class="form-control" readonly id="jam_selesai" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="jumlah_tiket" class="control-label">
+                                <label class="control-label">
                                     <span class="text-danger">*</span>Jumlah Tiket</label>
                                 <div class="form-group">
                                     <input type="text" name="jumlah_tiket" class="form-control" id="jumlah_tiket" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="poster" class="control-label">Poster</label>
+                                <label class="control-label">Poster</label>
                                 <div class="form-group">
                                     <input type="text" style="border:none;" id="filee" name="filee" readonly/>
                                     <input type='file' class="btn btn-primary btn-file" name='poster' size='20' id="poster" required />
                                 </div>
                             </div>
+                            <?php if ($this->session->userdata['logged_in']['level'] == 0) {?>
                             <div class="col-md-6">
-                                <label for="deskripsi_acara" class="control-label">
+                                <label class="control-label">Status</label>
+                                <div class="form-group">
+                                    <select name="status" class="form-control" required>
+                                        <option value="">select</option>
+                                        <option value="1">Aktif</option>
+                                        <option value="0">Non Aktif</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <?php }?>
+                            <div class="col-md-6">
+                                <label class="control-label">
                                     <span class="text-danger">*</span>Deskripsi Acara</label>
                                 <div class="form-group">
                                     <textarea name="deskripsi_acara" class="form-control" id="deskripsi_acara"><?= $this->input->post('deskripsi_acara'); ?></textarea>
@@ -262,6 +274,8 @@
                     $('[name="jam_selesai"]').val(data.jam_selesai);
                     $('[name="jumlah_tiket"]').val(data.jumlah_tiket);
                     $('[name="deskripsi_acara"]').val(data.deskripsi_acara);
+                    $('[name="status"]').attr('selected');
+                    $("select option[value="+data.status+"]").attr("selected","selected");
                     $('[name="filee"]').val(data.poster);
                     //document.getElementById("filee").innerHTML = .val(data.poster);
                 },

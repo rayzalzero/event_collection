@@ -13,6 +13,7 @@ class Home_model extends CI_Model
     function get_all_event_event()
     {
         $this->db->select('id_event, name_event, lokasi, pembicara, tanggal_mulai, jumlah_tiket, deskripsi_acara, poster');
+        $this->db->where('status', '1');
         $this->db->order_by('id_event', 'desc');
         $result = $this->db->get('event_event')->result_array();
         foreach ($result as $key => $value) {
@@ -27,6 +28,7 @@ class Home_model extends CI_Model
     function get_all_event_special()
     {
         $this->db->select('id_event, name_event, lokasi, pembicara, tanggal_mulai, jumlah_tiket, deskripsi_acara, poster');
+        $this->db->where('status', '1');
         $this->db->order_by('id_event', 'desc');
         $this->db->limit(5);
         $result = $this->db->get('event_event')->result_array();
