@@ -41,7 +41,6 @@ class Event_event_model extends CI_Model
         // $this->db->where('status', '1');        
         $this->db->order_by('id_event', 'desc');
         $result = $this->db->get('event_event')->result_array();
-        
         return $result;
     }
         

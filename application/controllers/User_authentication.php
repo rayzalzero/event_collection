@@ -68,8 +68,9 @@ class User_Authentication extends CI_Controller
           );
             $result = $this->login_database->registration_insert($data);
             if ($result == true) {
-                $data['message_display'] = 'Registration Successfully !';
-                $this->load->view('login_form', $data);
+                // $data['message_display'] = 'Registration Successfully !';
+                // $this->load->view('login_form', $data);
+                redirect('user_authentication/login');                
             } else {
                 $data['message_display'] = 'Username already exist!';
                 $this->load->view('registration_form', $data);
